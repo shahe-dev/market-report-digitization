@@ -1,0 +1,70 @@
+<!-- TEMPLATE: dubaiOverallMarket -->
+<section aria-labelledby="dubai-market-section" class="comparison-metrics">
+  <h2 id="dubai-market-section" class="comparison-metrics__title">Dubai Overall Market - <span class="highlight">{{metadata.period}}</span></h2>
+  <p class="chart-summary" style="margin-top: 0;">{{GENERATED_DUBAI_SUMMARY}}</p>
+
+  <div class="comparison-metrics__cards">
+    <!-- Sales Market -->
+    <div class="metrics-card">
+      <div class="metrics-card__title">Sales Market</div>
+      <div class="metrics-card__rows">
+        <div class="metrics-row">
+          <span class="metrics-row__label">Total Sale Value</span>
+          <span class="metrics-row__value metrics-row__value--cyan">{{dubaiOverallMarket.totalSaleValue}}</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row__label">Value Growth YoY</span>
+          <span class="metrics-row__value metrics-row__value--{{SIGN(dubaiOverallMarket.saleValueGrowth)}}">{{FORMAT_SIGN(dubaiOverallMarket.saleValueGrowth)}}%</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row__label">Total Transactions</span>
+          <span class="metrics-row__value metrics-row__value--cyan">{{dubaiOverallMarket.totalTransactions}}</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row__label">Transaction Growth YoY</span>
+          <span class="metrics-row__value metrics-row__value--{{SIGN(dubaiOverallMarket.transactionGrowth)}}">{{FORMAT_SIGN(dubaiOverallMarket.transactionGrowth)}}%</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row__label">Initial Sale</span>
+          <span class="metrics-row__value">{{dubaiOverallMarket.initialSalePercentage}}%</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row__label">Resale</span>
+          <span class="metrics-row__value">{{dubaiOverallMarket.resalePercentage}}%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rental Market -->
+    <div class="metrics-card">
+      <div class="metrics-card__title">Rental Market</div>
+      <div class="metrics-card__rows">
+        <div class="metrics-row">
+          <span class="metrics-row__label">Total Rental Value</span>
+          <span class="metrics-row__value metrics-row__value--cyan">{{dubaiOverallMarket.totalRentalValue}}</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row__label">Value Growth YoY</span>
+          <span class="metrics-row__value metrics-row__value--{{SIGN(dubaiOverallMarket.rentalValueGrowth)}}">{{FORMAT_SIGN(dubaiOverallMarket.rentalValueGrowth)}}%</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row__label">Total Transactions</span>
+          <span class="metrics-row__value metrics-row__value--cyan">{{dubaiOverallMarket.rentalTransactions}}</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row__label">Transaction Growth YoY</span>
+          <span class="metrics-row__value metrics-row__value--{{SIGN(dubaiOverallMarket.rentalTransactionGrowth)}}">{{FORMAT_SIGN(dubaiOverallMarket.rentalTransactionGrowth)}}%</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row__label">New Contracts</span>
+          <span class="metrics-row__value">{{dubaiOverallMarket.newRentalPercentage}}%</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row__label">Renewals</span>
+          <span class="metrics-row__value">{{dubaiOverallMarket.renewalPercentage}}%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="data-source">Source: {{dubaiOverallMarketDataSource}}</p>
+</section>

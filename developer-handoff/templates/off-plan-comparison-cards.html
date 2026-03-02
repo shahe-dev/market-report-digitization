@@ -1,0 +1,41 @@
+<!-- TEMPLATE: offPlanPrimary (comparison-cards variant) -->
+<!--
+  Used when enhanced.componentSelections.offPlanPrimary == "comparison-cards"
+-->
+<section aria-labelledby="off-plan-section" class="comparison-metrics">
+  <h2 id="off-plan-section" class="comparison-metrics__title">Off-Plan Primary Market - <span class="highlight">{{metadata.community}}</span></h2>
+  <p class="chart-summary" style="margin-top: 0;">{{enhanced.chartSummaries.offPlanPrimary}}</p>
+
+  <div class="comparison-metrics__cards">
+    <!-- Value Card -->
+    <div class="metrics-card">
+      <div class="metrics-card__title">Total Value</div>
+      <div class="metrics-card__rows">
+        <div class="metrics-row">
+          <span class="metrics-row__label">Off-Plan Primary Value</span>
+          <span class="metrics-row__value metrics-row__value--cyan">{{offPlanPrimary.totalValue}}</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row__label">Year-over-Year Change</span>
+          <span class="metrics-row__value metrics-row__value--{{SIGN(offPlanPrimary.valueGrowth)}}">{{FORMAT_SIGN(offPlanPrimary.valueGrowth)}}%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transactions Card -->
+    <div class="metrics-card">
+      <div class="metrics-card__title">Transactions</div>
+      <div class="metrics-card__rows">
+        <div class="metrics-row">
+          <span class="metrics-row__label">Off-Plan Primary Transactions</span>
+          <span class="metrics-row__value metrics-row__value--cyan">{{offPlanPrimary.transactions}}</span>
+        </div>
+        <div class="metrics-row">
+          <span class="metrics-row__label">Year-over-Year Change</span>
+          <span class="metrics-row__value metrics-row__value--{{SIGN(offPlanPrimary.transactionGrowth)}}">{{FORMAT_SIGN(offPlanPrimary.transactionGrowth)}}%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="data-source">Source: {{offPlanPrimaryDataSource}}</p>
+</section>

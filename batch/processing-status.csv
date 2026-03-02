@@ -1,0 +1,3 @@
+Id,Slug,FilenameSuggestion,URL,PDF Report Link,Stage1Status,Stage2Status,Stage3Status,Stage4Status,Stage5Status,FinalStatus,LastUpdated,Error
+100001,example-community-2025-resale-report,example-community-2025-resale-report.json,https://your-company.com/resale-reports/example-community-2025-resale-report/,https://your-company.com/wp-content/uploads/2026/01/Example-Community.pdf,completed,completed,completed,PASS,,PASS,2026-01-01 00:00:00,
+100002,another-community-2025-resale-report,another-community-2025-resale-report.json,https://your-company.com/resale-reports/another-community-2025-resale-report/,https://your-company.com/wp-content/uploads/2026/01/Another-Community.pdf,completed,completed,,,,,2026-01-01 00:00:00,

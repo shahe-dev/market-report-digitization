@@ -1,0 +1,3536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRAND Components Library - Master Templates</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Schema.org Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "BRAND Components Library - Master Templates with Real Estate Data",
+    "description": "Comprehensive component library showcasing Dubai real estate market data visualizations including KPIs, charts, and data tables from The Meadows villa market analysis",
+    "temporalCoverage": "2024-01-01/2025-06-30",
+    "spatialCoverage": {
+      "@type": "Place",
+      "name": "The Meadows, Dubai, UAE"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "the company"
+    },
+    "variableMeasured": [
+      {
+        "@type": "PropertyValue",
+        "name": "Average Price per Square Foot",
+        "value": 2911,
+        "unitText": "AED per sq.ft"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Year-over-Year Price Growth",
+        "value": 33.5,
+        "unitText": "percent"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Total Resale Transactions",
+        "value": 78,
+        "unitText": "transactions"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+/* ============================================================================
+   BRAND REAL ESTATE REPORTS - MASTER COMPONENT STYLES
+   ============================================================================
+
+   TABLE OF CONTENTS:
+   1. CSS RESET & BASE
+   2. CSS VARIABLES (Design Tokens)
+   3. ACCESSIBILITY & SEO UTILITIES
+   4. TYPOGRAPHY
+   5. DEMO PAGE STYLES (remove for production)
+   6. SUMMARY BLOCKS
+   7. KPI & METRICS
+   8. DATA TABLES
+   9. BAR CHARTS
+   10. LINE CHARTS
+   11. CONTENT BLOCKS
+   12. RESPONSIVE STYLES
+
+   Note: Section numbers in comments below follow this TOC structure.
+
+   ============================================================================ */
+
+
+/* ============================================================================
+   1. CSS RESET & BASE
+   ============================================================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background-color: #FFFFFF;
+  color: #222222;
+  line-height: 1.5;
+  padding: 40px;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+
+/* ============================================================================
+   2. CSS VARIABLES (Design Tokens)
+   ============================================================================ */
+
+:root {
+  /* Primary Colors */
+  --color-brand-cyan: #01AEE5;
+  --color-brand-green: #57CE9F;
+  --color-brand-orange: #E7AC65;
+
+  /* Gradient */
+  --gradient-primary: linear-gradient(90deg, #107899 0%, #01AEE5 100%);
+  --gradient-chart-fill: linear-gradient(180deg, #9DE6FD 0%, rgba(255, 255, 255, 0) 100%);
+
+  /* Text Colors */
+  --color-text-primary: #222222;
+  --color-text-dark: #1A1A1A;
+  --color-text-secondary: #6D6E70;
+  --color-text-muted: #6B7280;
+  --color-text-light: #9CA3AF;
+  --color-text-citation: #999999;
+  --color-text-white: #FFFFFF;
+
+  /* Semantic Colors */
+  --color-positive: #278702;
+  --color-negative: #E40000;
+
+  /* Background Colors */
+  --color-surface: #FFFFFF;
+  --color-card-bg: rgba(240, 243, 247, 0.5);
+  --color-table-header: #F8FAFB;
+  --color-icon-bg: #E3F4F9;
+
+  /* Border Colors */
+  --color-border: #E9E9E9;
+  --color-grid-line: #F1F1F1;
+  --color-divider: #F0F0F0;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 20px;
+  --space-2xl: 24px;
+  --space-3xl: 32px;
+  --space-4xl: 40px;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+
+  /* Container */
+  --container-max-width: 1120px;
+}
+
+
+/* ============================================================================
+   3. ACCESSIBILITY & SEO UTILITIES
+   ============================================================================ */
+
+/* Screen reader only - Hidden visually but accessible to screen readers and crawlers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Hidden data tables for charts - Accessible to crawlers */
+.sr-only.chart-data-table {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Chart summary text - Visible and crawlable */
+.chart-summary {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-top: var(--space-3xl);
+  margin-bottom: var(--space-2xl);
+  max-width: var(--container-max-width);
+}
+
+/* Data source citation */
+.data-source {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-citation);
+  line-height: 1.625;
+  margin-top: var(--space-2xl);
+}
+
+.data-source cite {
+  font-style: normal;
+}
+
+
+/* ============================================================================
+   4. TYPOGRAPHY
+   ============================================================================ */
+
+.highlight {
+  color: var(--color-brand-cyan);
+}
+
+
+/* ============================================================================
+   5. DEMO PAGE STYLES (remove for production)
+   ============================================================================ */
+
+.component-section {
+  max-width: var(--container-max-width);
+  margin: 0 auto var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.section-header {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-3xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.component-demo {
+  margin-bottom: var(--space-4xl);
+}
+
+.component-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-lg);
+}
+
+/* Component ID Badge - for development/refinement reference */
+.component-id-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #107899 0%, #01AEE5 100%);
+  color: #FFFFFF;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-left: 12px;
+  vertical-align: middle;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.component-id-badge::before {
+  content: 'ID: ';
+  opacity: 0.7;
+}
+
+
+/* ============================================================================
+   6. SUMMARY BLOCKS
+   ============================================================================ */
+
+/* 6.1 Executive Summary Card */
+.executive-summary-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2xl) var(--space-xl) var(--space-2xl) var(--space-3xl);
+  gap: var(--space-md);
+  max-width: var(--container-max-width);
+  min-height: 173px;
+  background: var(--color-card-bg);
+  border-left: 4px solid var(--color-brand-cyan);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-4xl);
+}
+
+.executive-summary-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  flex: 1;
+  max-width: 770px;
+}
+
+.executive-summary-card__title {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 130%;
+  color: var(--color-brand-cyan);
+}
+
+.executive-summary-card__description {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  color: var(--color-text-primary);
+}
+
+.executive-summary-card__chart {
+  flex-shrink: 0;
+  width: 288px;
+  height: 120px;
+}
+
+.mini-chart {
+  width: 100%;
+  height: 100%;
+}
+
+/* 6.2 Market Insight Block */
+.market-insight {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xl);
+  max-width: var(--container-max-width);
+  background: var(--color-card-bg);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl) var(--space-3xl);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--space-4xl);
+}
+
+.market-insight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--color-brand-cyan);
+  border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+}
+
+.market-insight__icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: var(--color-icon-bg);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.market-insight__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.market-insight__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-brand-cyan);
+  margin-bottom: var(--space-sm);
+}
+
+.market-insight__description {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+/* 6.3 Source Citation */
+.source-citation {
+  max-width: var(--container-max-width);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-text-citation);
+  line-height: 1.625;
+  margin-bottom: var(--space-4xl);
+}
+
+
+/* ============================================================================
+   7. KPI & METRICS
+   ============================================================================ */
+
+/* 7.1 Key Performance Indicators */
+.key-performance {
+  max-width: var(--container-max-width);
+  margin-bottom: var(--space-4xl);
+}
+
+.key-performance__title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-2xl);
+  line-height: 1.2;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.kpi-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.kpi-card:first-child {
+  border-radius: var(--radius-2xl) 0 0 var(--radius-2xl);
+  border-right: none;
+}
+
+.kpi-card:nth-child(2),
+.kpi-card:nth-child(3) {
+  border-radius: 0;
+  border-right: none;
+}
+
+.kpi-card:last-child {
+  border-radius: 0 var(--radius-2xl) var(--radius-2xl) 0;
+}
+
+.kpi-card__icon {
+  width: 52px;
+  height: 52px;
+  background: var(--color-icon-bg);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kpi-card__value {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-brand-cyan);
+  line-height: 1.2;
+}
+
+.kpi-card__label {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* 7.2 Indicators Block */
+.indicators {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  max-width: var(--container-max-width);
+  margin-bottom: var(--space-4xl);
+}
+
+.indicator-card {
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl) var(--space-3xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 88px;
+}
+
+.indicator-card--primary {
+  background: var(--gradient-primary);
+}
+
+.indicator-card--primary .indicator-card__label,
+.indicator-card--primary .indicator-card__value {
+  color: var(--color-text-white);
+}
+
+.indicator-card--secondary {
+  background: var(--color-card-bg);
+  padding-right: var(--space-xl);
+}
+
+.indicator-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.indicator-card__label {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.indicator-card__value {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.indicator-card__value--cyan {
+  color: var(--color-brand-cyan);
+  font-size: 28px;
+}
+
+.indicator-card--secondary .indicator-card__label {
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.indicator-card__chart {
+  flex-shrink: 0;
+}
+
+/* 7.3 Comparison Metrics Cards */
+.comparison-metrics {
+  max-width: var(--container-max-width);
+  margin-bottom: var(--space-4xl);
+}
+
+.comparison-metrics__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2xl);
+}
+
+.comparison-metrics__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.metrics-card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl) var(--space-3xl) var(--space-3xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.metrics-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: var(--color-brand-cyan);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.metrics-card__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xl);
+  padding-top: var(--space-sm);
+}
+
+.metrics-card__rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.metrics-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg) var(--space-xl);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.metrics-row__label {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+
+.metrics-row__value {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.metrics-row__value--green {
+  color: var(--color-positive);
+}
+
+.metrics-row__value--cyan {
+  color: var(--color-brand-cyan);
+}
+
+
+/* 7.4 Stacked Bar (Horizontal Part-to-Whole) */
+.stacked-bar-section {
+  max-width: var(--container-max-width);
+  margin: 0 auto var(--space-4xl);
+}
+
+.stacked-bar-section__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2xl);
+}
+
+.stacked-bar-card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl) var(--space-3xl) var(--space-3xl);
+}
+
+.stacked-bar-card__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xl);
+}
+
+.stacked-bar {
+  display: flex;
+  width: 100%;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.stacked-bar__segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  transition: flex-basis 0.3s ease;
+  position: relative;
+}
+
+.stacked-bar__segment--primary {
+  background: var(--color-brand-cyan);
+}
+
+.stacked-bar__segment--secondary {
+  background: var(--color-brand-green);
+}
+
+.stacked-bar__value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  display: block;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.stacked-bar__legend {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-lg);
+  padding: 0 var(--space-xs);
+}
+
+.stacked-bar__legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.stacked-bar__legend-badge {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-sm);
+}
+
+.stacked-bar__legend-badge--primary {
+  background: var(--color-brand-cyan);
+}
+
+.stacked-bar__legend-badge--secondary {
+  background: var(--color-brand-green);
+}
+
+.stacked-bar__legend-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.stacked-bar__legend-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-left: var(--space-xs);
+}
+
+/* Stacked Bar Dual Variant (Side by Side) */
+.stacked-bar-dual {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+/* Stacked Bar Compact Variant */
+.stacked-bar-card--compact {
+  padding: var(--space-lg) var(--space-xl) var(--space-xl);
+}
+
+.stacked-bar-card--compact .stacked-bar-card__title {
+  font-size: 16px;
+  margin-bottom: var(--space-md);
+}
+
+.stacked-bar-card--compact .stacked-bar {
+  height: 36px;
+}
+
+.stacked-bar-card--compact .stacked-bar__value {
+  font-size: 14px;
+}
+
+.stacked-bar-card--compact .stacked-bar__legend {
+  margin-top: var(--space-md);
+}
+
+
+/* ============================================================================
+   8. DATA TABLES
+   ============================================================================ */
+
+/* Shared Table Styles */
+.table-container {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+/* 8.1 Price Data Insights Table */
+.price-data-insights {
+  max-width: var(--container-max-width);
+  margin-bottom: var(--space-4xl);
+}
+
+.price-data-insights__title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2xl);
+  line-height: 1.2;
+}
+
+.insights-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.insights-table th,
+.insights-table td {
+  padding: var(--space-2xl) 28px;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 16px;
+  line-height: 1.5;
+  border-right: 1px solid var(--color-border);
+}
+
+.insights-table th:last-child,
+.insights-table td:last-child {
+  border-right: none;
+}
+
+.insights-table thead tr {
+  background: var(--color-card-bg);
+}
+
+.insights-table th {
+  font-weight: 600;
+  color: var(--color-brand-cyan);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.insights-table tbody tr:nth-child(odd) {
+  background: var(--color-surface);
+}
+
+.insights-table tbody tr:nth-child(even) {
+  background: var(--color-card-bg);
+}
+
+.insights-table tbody tr:not(:last-child) td {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.insights-table td {
+  color: var(--color-text-primary);
+  font-weight: 400;
+}
+
+.insights-table .bedroom-label {
+  font-weight: 700;
+}
+
+.insights-table .yoy-value {
+  font-weight: 700;
+}
+
+.insights-table .yoy-value.positive {
+  color: var(--color-positive);
+}
+
+.insights-table .yoy-value.negative {
+  color: var(--color-negative);
+}
+
+/* Column widths */
+.col-bedrooms { width: 26%; }
+.col-price { width: 25%; }
+.col-transactions { width: 24%; }
+.col-yoy { width: 25%; }
+
+/* 8.2 Key Differences Table */
+.key-differences {
+  max-width: var(--container-max-width);
+  margin-bottom: var(--space-4xl);
+}
+
+.key-differences__title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-2xl);
+  line-height: 1.2;
+}
+
+.differences-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.differences-table th,
+.differences-table td {
+  padding: var(--space-xl) var(--space-2xl);
+  text-align: left;
+  vertical-align: top;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.differences-table thead tr {
+  background: var(--color-table-header);
+}
+
+.differences-table th {
+  font-weight: 700;
+  color: var(--color-brand-cyan);
+  border-bottom: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+}
+
+.differences-table th:last-child {
+  border-right: none;
+}
+
+.differences-table tbody tr:nth-child(odd) {
+  background: var(--color-surface);
+}
+
+.differences-table tbody tr:nth-child(even) {
+  background: var(--color-table-header);
+}
+
+.differences-table tbody tr:not(:last-child) td {
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.differences-table td {
+  color: #4B5563;
+  font-weight: 400;
+  border-right: 1px solid var(--color-border);
+}
+
+.differences-table td:last-child {
+  border-right: none;
+}
+
+.differences-table .feature-label {
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.col-feature { width: 25%; }
+.col-section, .col-list { width: 37.5%; }
+
+
+/* ============================================================================
+   9. BAR CHARTS
+   ============================================================================ */
+
+/* Shared Chart Styles */
+.chart-card {
+  width: 100%;
+  max-width: var(--container-max-width);
+  padding: var(--space-3xl) var(--space-4xl) var(--space-4xl);
+  background: var(--color-surface);
+  margin-bottom: 60px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+}
+
+.chart-card:last-child {
+  margin-bottom: 0;
+}
+
+.chart-card__title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 130%;
+  margin-bottom: var(--space-3xl);
+  color: var(--color-text-primary);
+}
+
+.chart-wrapper {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 296px;
+  padding-right: var(--space-sm);
+  text-align: right;
+}
+
+.y-axis-label {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.chart-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-container {
+  position: relative;
+  height: 296px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.grid-container--bar {
+  height: 296px;
+  margin-bottom: 48px; /* Space for bar labels */
+}
+
+.grid-container--line {
+  height: 302px;
+}
+
+.grid-line {
+  width: 100%;
+  height: 2px;
+  background: var(--color-grid-line);
+  position: relative;
+  z-index: 1;
+}
+
+/* Bars container must be above grid lines */
+.bars-container {
+  z-index: 2;
+}
+
+.x-axis {
+  display: flex;
+  justify-content: center;
+  gap: 54px;
+  padding: var(--space-lg) 0 0;
+}
+
+.x-axis-label {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+/* Legend */
+.chart-legend {
+  display: flex;
+  gap: var(--space-3xl);
+  margin-top: var(--space-3xl);
+  padding-left: 100px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legend-badge {
+  width: 22px;
+  height: 12px;
+  border-radius: var(--radius-sm);
+}
+
+.legend-badge--cyan {
+  background: var(--color-brand-cyan);
+}
+
+.legend-badge--green {
+  background: var(--color-brand-green);
+}
+
+.legend-badge--orange {
+  background: var(--color-brand-orange);
+}
+
+.legend-label {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--color-text-primary);
+}
+
+/* Chart Footnote */
+.chart-footnote {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: var(--space-3xl);
+}
+
+/* 8.1 Vertical Multi-bar Chart */
+.bars-container--multibar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: var(--space-4xl);
+  padding: 0 var(--space-3xl);
+  z-index: 2;
+}
+
+.bar-group {
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+  height: 100%;
+  justify-content: center;
+}
+
+.bar {
+  width: 80px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  transition: opacity 0.2s ease;
+}
+
+.bar:hover {
+  opacity: 0.85;
+}
+
+.bar--cyan {
+  background: var(--color-brand-cyan);
+}
+
+.bar--green {
+  background: var(--color-brand-green);
+}
+
+.x-axis--multibar {
+  justify-content: center;
+  gap: var(--space-4xl);
+  padding: 0 var(--space-3xl);
+}
+
+.x-axis--multibar .x-axis-label {
+  width: 166px;
+  text-align: center;
+}
+
+/* 8.2 Vertical Single-bar Chart */
+.bars-container--single {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: var(--space-xl);
+  padding: 0 var(--space-3xl);
+  z-index: 2;
+}
+
+.bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  position: relative;
+  flex: 0 1 auto;
+  width: 100%;
+  max-width: 127px;
+}
+
+.bar--labeled {
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Height is set via inline style */
+}
+
+.bar__value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-white);
+  white-space: nowrap;
+}
+
+.bar__label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #7D7D7D;
+  margin-top: 15px;
+  text-align: center;
+  position: absolute;
+  bottom: -40px;
+}
+
+/* 8.3 Vertical Stacked Bar Chart */
+.bars-container--stacked {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: var(--space-3xl);
+  padding: 0 var(--space-3xl);
+  z-index: 2;
+}
+
+.bar-column {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  max-width: 160px;
+  height: 100%;
+}
+
+.vertical-stacked-bar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.bar-segment {
+  width: 100%;
+}
+
+.bar-segment--cyan {
+  background: var(--color-brand-cyan);
+}
+
+.bar-segment--green {
+  background: var(--color-brand-green);
+}
+
+.x-axis--stacked {
+  justify-content: center;
+  gap: var(--space-3xl);
+  padding: var(--space-2xl) var(--space-3xl) 0;
+}
+
+.x-axis--stacked .x-axis-label {
+  font-weight: 700;
+  width: 100%;
+  max-width: 160px;
+  text-align: center;
+}
+
+/* 8.4 Horizontal Bar Chart */
+.horizontal-chart {
+  max-width: var(--container-max-width);
+  margin-bottom: var(--space-4xl);
+}
+
+.horizontal-chart__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-2xl);
+  line-height: 1.2;
+}
+
+.horizontal-chart__container {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-3xl);
+  padding: var(--space-3xl);
+}
+
+.horizontal-chart__scale {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-2xl);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-text-light);
+}
+
+.horizontal-bar-group {
+  margin-bottom: var(--space-2xl);
+}
+
+.horizontal-bar-group:last-child {
+  margin-bottom: 0;
+}
+
+.horizontal-bar__label {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-sm);
+}
+
+.horizontal-bar__wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.horizontal-bar {
+  height: 48px;
+  width: var(--bar-width, 50%);
+  background: linear-gradient(to right, var(--color-brand-cyan) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: var(--radius-xl);
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 80px;
+}
+
+.horizontal-bar__value {
+  position: absolute;
+  right: -50px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  white-space: nowrap;
+}
+
+
+/* ============================================================================
+   10. LINE CHARTS
+   ============================================================================ */
+
+.vertical-grid-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vertical-grid-line {
+  width: 2px;
+  height: 100%;
+  background: var(--color-grid-line);
+}
+
+.line-chart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.area-fill {
+  opacity: 1;
+}
+
+.line-path {
+  stroke-linecap: round;
+  stroke-width: 2px;
+  stroke-dasharray: 4 4;
+}
+
+/* Data Points */
+.data-points {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.data-point {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--color-brand-cyan);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  transition: transform 0.2s ease;
+}
+
+.data-point:hover {
+  transform: translate(-50%, -50%) scale(1.4);
+}
+
+/* Data Point Labels */
+.data-point__label {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-brand-cyan);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.data-point__label--below {
+  bottom: auto;
+  top: 100%;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.data-point__label--green {
+  color: var(--color-brand-green);
+}
+
+.data-point__label--orange {
+  color: var(--color-brand-orange);
+}
+
+/* Trend Lines */
+.trend-line {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3px;
+}
+
+.trend-line--cyan {
+  stroke: var(--color-brand-cyan);
+}
+
+.trend-line--green {
+  stroke: var(--color-brand-green);
+}
+
+.trend-line--orange {
+  stroke: var(--color-brand-orange);
+}
+
+
+/* ============================================================================
+   11. CONTENT BLOCKS
+   ============================================================================ */
+
+/* 11.1 Market Dynamics */
+.market-dynamics {
+  max-width: 1109px;
+  margin-bottom: var(--space-4xl);
+}
+
+.market-dynamics__wrapper {
+  display: grid;
+  grid-template-columns: 57% 43%;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "text image"
+    "additional image";
+  gap: 0;
+  min-height: 475px;
+}
+
+.market-dynamics__text {
+  grid-area: text;
+  padding-right: var(--space-4xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.market-dynamics__additional {
+  grid-area: additional;
+  padding-right: var(--space-4xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.market-dynamics__image {
+  grid-area: image;
+  min-height: 475px;
+}
+
+.market-dynamics__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xl);
+  line-height: 1.3;
+}
+
+.market-dynamics__paragraph {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.market-dynamics__paragraph--first {
+  margin-bottom: var(--space-lg);
+}
+
+.market-dynamics__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 11px;
+  display: block;
+}
+
+/* 11.2 Investor Considerations */
+.investor-considerations {
+  max-width: var(--container-max-width);
+  margin-bottom: var(--space-4xl);
+}
+
+.investor-considerations__title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-sm);
+  line-height: 1.2;
+}
+
+.investor-considerations__subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4xl);
+  line-height: 1.5;
+}
+
+.investor-considerations__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-md);
+}
+
+.consideration-card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  grid-column: span 2;
+}
+
+.consideration-card--wide {
+  grid-column: span 3;
+}
+
+.consideration-card__icon {
+  width: 52px;
+  height: 52px;
+  background: var(--color-icon-bg);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.consideration-card__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  line-height: 1.3;
+}
+
+.consideration-card__description {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+
+/* ============================================================================
+   12. RESPONSIVE STYLES
+   ============================================================================ */
+
+/* Tablet */
+@media (max-width: 900px) {
+  body {
+    padding: var(--space-2xl);
+  }
+
+  /* KPI Grid */
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kpi-card {
+    border: 1px solid var(--color-border);
+    border-bottom: none;
+  }
+
+  .kpi-card:first-child {
+    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+    border-right: 1px solid var(--color-border);
+  }
+
+  .kpi-card:nth-child(2),
+  .kpi-card:nth-child(3) {
+    border-radius: 0;
+    border-right: 1px solid var(--color-border);
+  }
+
+  .kpi-card:last-child {
+    border-radius: 0 0 var(--radius-2xl) var(--radius-2xl);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  /* Indicators */
+  .indicators {
+    grid-template-columns: 1fr;
+  }
+
+  /* Metrics Cards */
+  .comparison-metrics__cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stacked Bar */
+  .stacked-bar-dual {
+    grid-template-columns: 1fr;
+  }
+
+  .stacked-bar__legend {
+    flex-direction: column;
+    gap: var(--space-sm);
+    align-items: flex-start;
+  }
+
+  .stacked-bar {
+    height: 40px;
+  }
+
+  .stacked-bar__value {
+    font-size: 14px;
+  }
+
+  /* Tables */
+  .differences-table th,
+  .differences-table td,
+  .insights-table th,
+  .insights-table td {
+    padding: var(--space-lg) var(--space-xl);
+    font-size: 15px;
+  }
+
+  /* Charts */
+  .chart-card {
+    padding: var(--space-2xl) var(--space-3xl) var(--space-3xl);
+  }
+
+  .chart-card__title {
+    font-size: 24px;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .chart-legend {
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+    padding-left: 0;
+  }
+
+  /* Horizontal Chart */
+  .horizontal-chart__container {
+    padding: var(--space-2xl);
+    border-radius: var(--radius-2xl);
+  }
+
+  .horizontal-bar {
+    height: 40px;
+    border-radius: var(--radius-lg);
+  }
+
+  .horizontal-bar__value {
+    font-size: 16px;
+    right: -45px;
+  }
+
+  /* Investor Cards */
+  .investor-considerations__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .consideration-card,
+  .consideration-card--wide {
+    grid-column: 1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  body {
+    padding: var(--space-lg);
+    overflow-x: hidden;
+  }
+
+  /* Prevent horizontal overflow */
+  .chart-card {
+    padding: var(--space-2xl) var(--space-xl) var(--space-3xl);
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  /* Executive Summary */
+  .executive-summary-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .executive-summary-card__chart {
+    align-self: flex-end;
+  }
+
+  /* Chart summary - reduced spacing on mobile */
+  .chart-summary {
+    margin-top: var(--space-2xl);
+  }
+
+  /* Tables - horizontal scroll */
+  .table-container {
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .insights-table,
+  .differences-table {
+    min-width: 560px;
+  }
+
+  /* Chart responsive adjustments */
+  .grid-container {
+    height: 260px;
+  }
+
+  .grid-container--bar {
+    height: 260px;
+    margin-bottom: 40px;
+  }
+
+  .y-axis-label {
+    font-size: 12px;
+  }
+
+  .x-axis-label {
+    font-size: 12px;
+  }
+
+  /* Single-bar chart mobile */
+  .bars-container--single {
+    padding: 0 var(--space-md);
+    gap: var(--space-md);
+  }
+
+  .bar-wrapper {
+    max-width: 80px;
+  }
+
+  .bar--labeled {
+    min-height: 32px;
+  }
+
+  .bar__value {
+    font-size: 14px;
+  }
+
+  .bar__label {
+    font-size: 11px;
+    bottom: -32px;
+  }
+
+  /* Stacked bar chart mobile (vertical variant - section 8.3) */
+  .bars-container--stacked {
+    padding: 0 var(--space-lg);
+    gap: var(--space-lg);
+  }
+
+  .bar-column {
+    max-width: 100px;
+  }
+
+  .vertical-stacked-bar {
+    max-width: 100px;
+  }
+
+  /* Horizontal stacked bar mobile (sections 2.4/2.5) */
+  .stacked-bar__segment {
+    min-width: 40px;
+  }
+
+  .x-axis--stacked {
+    padding: var(--space-lg) var(--space-lg) 0;
+    justify-content: space-evenly;
+  }
+
+  .x-axis--stacked .x-axis-label {
+    flex: 1;
+    max-width: 100px;
+    font-size: 11px;
+  }
+
+  /* Market Dynamics */
+  .market-dynamics__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    min-height: auto;
+  }
+
+  .market-dynamics__text {
+    order: 1;
+    padding-right: 0;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .market-dynamics__image {
+    order: 2;
+    min-height: 280px;
+    height: auto;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .market-dynamics__additional {
+    order: 3;
+    padding-right: 0;
+    gap: var(--space-xl);
+  }
+
+  .market-dynamics__img {
+    border-radius: var(--space-sm);
+    height: auto;
+    aspect-ratio: 337 / 260;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  body {
+    padding: var(--space-lg);
+    overflow-x: hidden;
+  }
+
+  /* Prevent horizontal overflow */
+  .chart-card {
+    padding: var(--space-xl) var(--space-lg) var(--space-2xl);
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  /* Chart summary - tighter spacing on small mobile */
+  .chart-summary {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Titles */
+  .key-performance__title,
+  .price-data-insights__title,
+  .key-differences__title,
+  .horizontal-chart__title,
+  .investor-considerations__title {
+    font-size: 24px;
+    margin-bottom: var(--space-lg);
+  }
+
+  .chart-card__title {
+    font-size: 18px;
+    line-height: 140%;
+  }
+
+  /* Chart Wrapper */
+  .chart-wrapper {
+    gap: var(--space-sm);
+  }
+
+  .y-axis {
+    min-width: 40px;
+  }
+
+  .y-axis-label {
+    font-size: 11px;
+  }
+
+  .x-axis {
+    gap: var(--space-sm);
+    padding: var(--space-sm) 0 0;
+  }
+
+  .x-axis-label {
+    font-size: 11px;
+  }
+
+  /* Bars - Multi-bar */
+  .bar {
+    width: 32px;
+    border-radius: var(--space-sm) var(--space-sm) 0 0;
+  }
+
+  .bars-container--multibar {
+    gap: var(--space-sm);
+  }
+
+  .bar-group {
+    gap: 2px;
+  }
+
+  .x-axis--multibar {
+    gap: var(--space-sm);
+  }
+
+  .x-axis--multibar .x-axis-label {
+    width: 66px;
+  }
+
+  /* Chart area adjustments */
+  .grid-container {
+    height: 220px;
+  }
+
+  .grid-container--bar {
+    height: 220px;
+    margin-bottom: 36px;
+  }
+
+  /* Bars - Single-bar with labels */
+  .bars-container--single {
+    padding: 0 var(--space-xs);
+    gap: var(--space-sm);
+  }
+
+  .bar-wrapper {
+    max-width: 60px;
+  }
+
+  .bar--labeled {
+    min-height: 28px;
+  }
+
+  .bar__value {
+    font-size: 12px;
+  }
+
+  .bar__label {
+    font-size: 10px;
+    bottom: -28px;
+    white-space: nowrap;
+  }
+
+  /* Bars - Stacked */
+  .bars-container--stacked {
+    padding: 0 var(--space-sm);
+    gap: var(--space-sm);
+  }
+
+  .bar-column {
+    max-width: 80px;
+  }
+
+  .vertical-stacked-bar {
+    border-radius: var(--radius-md);
+  }
+
+  /* Horizontal stacked bar - smaller segments on small mobile */
+  .stacked-bar__segment {
+    min-width: 32px;
+  }
+
+  .stacked-bar__value {
+    font-size: 12px;
+  }
+
+  .x-axis--stacked {
+    padding: var(--space-md) var(--space-sm) 0;
+    gap: var(--space-sm);
+  }
+
+  .x-axis--stacked .x-axis-label {
+    max-width: 80px;
+    font-size: 10px;
+    text-align: center;
+  }
+
+  /* Horizontal bars */
+  .horizontal-bar__label {
+    font-size: 14px;
+    min-width: 60px;
+  }
+
+  .horizontal-bar {
+    height: 40px;
+    justify-content: flex-end;
+  }
+
+  .horizontal-bar__value {
+    position: relative;
+    right: auto;
+    font-size: 14px;
+    padding-right: var(--space-md);
+    color: var(--color-text-dark);
+  }
+
+  /* Legend */
+  .chart-legend {
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+    flex-wrap: wrap;
+  }
+
+  .legend-badge {
+    width: 14px;
+    height: 14px;
+  }
+
+  .legend-label {
+    font-size: 12px;
+  }
+
+  /* Source Citation */
+  .source-citation {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+
+/* ============================================================================
+   SCROLLBAR STYLING
+   ============================================================================ */
+
+.table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #F0F3F7;
+  border-radius: 4px;
+  margin: 0 var(--space-lg);
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #B2CDDC;
+  border-radius: 4px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============================================================================
+     MPP REAL ESTATE REPORTS - MASTER COMPONENT LIBRARY
+     ============================================================================
+
+     TABLE OF CONTENTS:
+     1. SUMMARY BLOCKS
+        - Executive Summary Card
+        - Market Insight Block
+        - Source Citation
+
+     2. KPI & METRICS
+        - Key Performance Indicators (4-column strip)
+        - Indicators Block (gradient + chart)
+        - Comparison Metrics Cards
+        - Stacked Bar (horizontal part-to-whole)
+
+     3. DATA TABLES
+        - Price Data Insights Table
+        - Key Differences Summary Table
+
+     4. BAR CHARTS
+        - Vertical Multi-bar Chart (comparison)
+        - Vertical Single-bar Chart (volume)
+        - Vertical Stacked Bar Chart (composition)
+        - Horizontal Bar Chart (rankings)
+
+     5. LINE CHARTS
+        - Single Line Chart with Area Fill
+        - Multi-line Comparison Chart
+
+     6. CONTENT BLOCKS
+        - Market Dynamics (text + image)
+        - Investor Considerations (icon cards grid)
+
+     ============================================================================ -->
+
+
+<!-- ============================================================================
+     1. SUMMARY BLOCKS
+     ============================================================================ -->
+
+<section class="component-section" id="summary-blocks">
+  <h1 class="section-header">1. Summary Blocks</h1>
+
+  <!-- 1.1 EXECUTIVE SUMMARY CARD -->
+  <div class="component-demo">
+    <h2 class="component-label" id="executive-summary-title">1.1 Executive Summary Card <span class="component-id-badge">executive-summary</span></h2>
+
+    <p class="chart-summary">
+      The Meadows villa market demonstrated strong performance in H1 2025 with
+      78 resale transactions valued at AED 918.2M, representing 33.5% year-over-year
+      price appreciation to AED 2,911 per square foot.
+    </p>
+
+    <figure>
+      <div class="executive-summary-card" role="article" aria-labelledby="executive-summary-title">
+      <div class="executive-summary-card__content">
+        <h3 class="executive-summary-card__title">Executive Summary</h3>
+        <p class="executive-summary-card__description">
+          The Meadows villa market demonstrated exceptional performance in H1 2025, with
+          average resale prices reaching AED 2,911 per square foot--a remarkable 33.5%
+          increase compared to H1 2024. Transaction volume totaled 78 resales worth AED 918.2M.
+        </p>
+      </div>
+      <div class="executive-summary-card__chart">
+        <svg class="mini-chart" viewBox="0 0 288 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="17" width="287.098" height="1" fill="#E9E9E9"/>
+          <rect x="0" y="61" width="287.098" height="1" fill="#E9E9E9"/>
+          <rect x="0" y="106" width="287.098" height="1" fill="#E9E9E9"/>
+          <path d="M144.135 15.6579C136.198 15.6579 111.177 31.3947 100.484 31.3947C89.792 31.3947 74.851 75.868 60.642 75.868C46.434 75.868 27.831 28.6579 18.31 28.6579C8.789 28.6579 0 50.5526 0 50.5526V120H287.098V17.7105C279.158 17.7105 273.458 3 265.708 3C257.968 3 235.098 69.026 224.848 69.026C214.588 69.026 201.618 17.8947 189.728 31.3947C177.831 44.8947 152.072 15.6579 144.135 15.6579Z" fill="url(#execSummaryGradient)"/>
+          <path d="M287.098 17.7371C279.158 17.7371 273.458 3 265.708 3C257.968 3 235.098 69.146 224.848 69.146C214.588 69.146 202.408 17.7371 191.158 31.446C179.922 45.1549 152.072 15.6808 144.135 15.6808C136.198 15.6808 111.177 31.446 100.484 31.446C89.792 31.446 74.851 76 60.642 76C46.434 76 27.831 28.7042 18.31 28.7042C8.789 28.7042 0 50.6385 0 50.6385" stroke="#01AEE5" stroke-width="2"/>
+          <defs>
+            <linearGradient id="execSummaryGradient" x1="143.549" y1="0.2315" x2="143.549" y2="120" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#9DE6FD"/>
+              <stop offset="1" stop-color="white" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      </div>
+
+      <figcaption id="executive-summary-desc" class="sr-only">
+        Executive summary card showing The Meadows villa market performance with trend visualization
+        demonstrating price appreciation from H1 2024 to H1 2025.
+      </figcaption>
+
+      <table class="sr-only chart-data-table">
+        <caption>The Meadows Villa Market Summary Statistics - H1 2025</caption>
+        <thead>
+          <tr>
+            <th scope="col">Metric</th>
+            <th scope="col">Value</th>
+            <th scope="col">Year-over-Year Change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Average Price per Square Foot</td>
+            <td>AED 2,911</td>
+            <td>+33.5%</td>
+          </tr>
+          <tr>
+            <td>Total Resale Transactions</td>
+            <td>78</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <td>Total Transaction Value</td>
+            <td>AED 918.2M</td>
+            <td>N/A</td>
+          </tr>
+        </tbody>
+      </table>
+    </figure>
+
+    <p class="data-source">Source: Property Monitor, the company analysis</p>
+  </div>
+
+  <!-- 1.2 MARKET INSIGHT BLOCK -->
+  <div class="component-demo">
+    <h2 class="component-label" id="market-insight-title">1.2 Market Insight Block <span class="component-id-badge">market-insight</span></h2>
+
+    <p class="chart-summary">
+      Five-bedroom villas in The Meadows achieved 56.3% price appreciation in H1 2025,
+      representing the strongest performance segment due to sustained demand for spacious
+      family homes with established community infrastructure.
+    </p>
+
+    <article class="market-insight" role="article" aria-labelledby="market-insight-title">
+      <div class="market-insight__icon">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.5605 12.939L12.7939 16.705" stroke="#01AEE5" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M16.501 6.996V12.999H22.5035L28.506 6.996L24.5038 4.996L22.5035 0.994L16.501 6.996Z" stroke="#01AEE5" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 3.958C5.15 4.378 -0.14 10.124 0 16.981C0.14 23.837 5.67 29.362 12.52 29.502C19.38 29.641 25.12 24.346 25.54 17.501" stroke="#01AEE5" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M19.818 17.501C19.414 21.195 16.226 23.951 12.512 23.817C8.798 23.682 5.818 20.702 5.683 16.988C5.549 13.274 8.305 10.086 12 9.682" stroke="#01AEE5" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="market-insight__content">
+        <h3 class="market-insight__title">Market Insight</h3>
+        <p class="market-insight__description">
+          The 56.3% price increase for five-bedroom villas represents the strongest performance segment in The Meadows H1 2025 market, reflecting sustained demand for spacious family homes with established community infrastructure.
+        </p>
+      </div>
+    </article>
+
+    <table class="sr-only chart-data-table">
+      <caption>The Meadows Five-Bedroom Villa Performance - H1 2025</caption>
+      <thead>
+        <tr>
+          <th scope="col">Bedroom Type</th>
+          <th scope="col">Price Appreciation</th>
+          <th scope="col">Key Insight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>5 Bedroom</td>
+          <td>+56.3%</td>
+          <td>Strongest performance segment with sustained demand for family homes</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="data-source">Source: Property Monitor, the company analysis</p>
+  </div>
+
+  <!-- 1.3 SOURCE CITATION -->
+  <div class="component-demo">
+    <h2 class="component-label" id="source-citation-title">1.3 Source Citation <span class="component-id-badge">source-citation</span></h2>
+
+    <p class="chart-summary">
+      Standard attribution format for data sources used in BRAND real estate reports.
+    </p>
+
+    <aside role="complementary" aria-labelledby="source-citation-title">
+      <p class="source-citation">Source: Property Monitor, the company analysis</p>
+    </aside>
+  </div>
+
+</section>
+
+
+<!-- ============================================================================
+     2. KPI & METRICS
+     ============================================================================ -->
+
+<section class="component-section" id="kpi-metrics">
+  <h1 class="section-header">2. KPI & Metrics</h1>
+
+  <!-- 2.1 KEY PERFORMANCE INDICATORS (4-column strip) -->
+  <div class="component-demo">
+    <h2 class="component-label" id="kpi-title">2.1 Key Performance Indicators <span class="component-id-badge">kpi-strip</span></h2>
+
+    <p class="chart-summary">
+      The Meadows villa market achieved strong performance in H1 2025 with average
+      prices of AED 2,911 per sq.ft representing 33.5% year-over-year growth.
+      A total of 78 resale transactions generated AED 918.2M in value.
+    </p>
+
+    <div class="key-performance">
+      <h3 class="key-performance__title">Key performance</h3>
+      <div class="kpi-grid" role="list">
+        <article class="kpi-card" role="listitem">
+          <div class="kpi-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="#01AEE5" stroke-width="1.5"/>
+              <path d="M12 6v6l4 2" stroke="#01AEE5" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="kpi-card__value">AED 2,911</div>
+          <div class="kpi-card__label">Avg. Price per Sq. Ft</div>
+        </article>
+        <article class="kpi-card" role="listitem">
+          <div class="kpi-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 17l6-6 4 4 8-8" stroke="#01AEE5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M17 7h4v4" stroke="#01AEE5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="kpi-card__value">+33.5%</div>
+          <div class="kpi-card__label">YoY Price Growth</div>
+        </article>
+        <article class="kpi-card" role="listitem">
+          <div class="kpi-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="10" width="4" height="10" stroke="#01AEE5" stroke-width="1.5"/>
+              <rect x="10" y="6" width="4" height="14" stroke="#01AEE5" stroke-width="1.5"/>
+              <rect x="17" y="2" width="4" height="18" stroke="#01AEE5" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="kpi-card__value">78</div>
+          <div class="kpi-card__label">Resale Transactions</div>
+        </article>
+        <article class="kpi-card" role="listitem">
+          <div class="kpi-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="#01AEE5" stroke-width="1.5"/>
+              <path d="M12 6v2m0 8v2m-4-6h2m8 0h2" stroke="#01AEE5" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="kpi-card__value">AED 918.2M</div>
+          <div class="kpi-card__label">Total Resale Value</div>
+        </article>
+      </div>
+
+      <table class="sr-only chart-data-table">
+        <caption>The Meadows Villa Market Key Performance Indicators - H1 2025</caption>
+        <thead>
+          <tr>
+            <th scope="col">Metric</th>
+            <th scope="col">Value</th>
+            <th scope="col">Context</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Average Price per Square Foot</td>
+            <td>AED 2,911</td>
+            <td>Primary price metric</td>
+          </tr>
+          <tr>
+            <td>Year-over-Year Price Growth</td>
+            <td>+33.5%</td>
+            <td>Annual appreciation rate</td>
+          </tr>
+          <tr>
+            <td>Resale Transactions</td>
+            <td>78</td>
+            <td>Total transaction volume</td>
+          </tr>
+          <tr>
+            <td>Total Resale Value</td>
+            <td>AED 918.2M</td>
+            <td>Combined market value</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="data-source">Source: Property Monitor, the company analysis</p>
+  </div>
+
+  <!-- 2.2 INDICATORS BLOCK (gradient + chart) -->
+  <div class="component-demo">
+    <h2 class="component-label" id="indicators-title">2.2 Indicators Block <span class="component-id-badge">indicators-block</span></h2>
+
+    <p class="chart-summary">
+      The Meadows rental market recorded 178 transactions in H1 2025 with a gross
+      rental yield of 5.3%, demonstrating strong investor returns.
+    </p>
+
+    <div class="indicators" role="region" aria-labelledby="indicators-title">
+      <div class="indicator-card indicator-card--primary">
+        <span class="indicator-card__label">Total Rental Transactions</span>
+        <span class="indicator-card__value">178</span>
+      </div>
+      <div class="indicator-card indicator-card--secondary">
+        <div class="indicator-card__content">
+          <span class="indicator-card__value indicator-card__value--cyan">5.3%</span>
+          <span class="indicator-card__label">Gross rental yield</span>
+        </div>
+        <div class="indicator-card__chart">
+          <svg width="148" height="56" viewBox="0 0 247 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="indicatorChartGradient" x1="123.5" y1="0" x2="123.5" y2="94" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#9DE6FD"/>
+                <stop offset="1" stop-color="white" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0 77.71L34.62 69.67L69.55 34.84L104.78 19.14L140.01 75.04L175.54 60.11L211.08 19.14L246.91 0V94H0V77.71Z" fill="url(#indicatorChartGradient)"/>
+            <path d="M0 77.71L34.62 69.67L69.55 34.84L104.78 19.14L140.01 75.04L175.54 60.11L211.08 19.14L246.91 0" fill="none" stroke="#01AEE5" stroke-width="1.5" stroke-dasharray="4 3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <table class="sr-only chart-data-table">
+      <caption>The Meadows Rental Market Indicators - H1 2025</caption>
+      <thead>
+        <tr>
+          <th scope="col">Metric</th>
+          <th scope="col">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total Rental Transactions</td>
+          <td>178</td>
+        </tr>
+        <tr>
+          <td>Gross Rental Yield</td>
+          <td>5.3%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="data-source">Source: Property Monitor, the company analysis</p>
+  </div>
+
+  <!-- 2.3 COMPARISON METRICS CARDS -->
+  <div class="component-demo">
+    <h2 class="component-label" id="comparison-metrics-title">2.3 Comparison Metrics Cards <span class="component-id-badge">comparison-cards</span></h2>
+
+    <p class="chart-summary">
+      The Meadows rental market shows average rent of AED 102 per sq.ft with 10.4%
+      year-over-year growth. Contract renewals comprise 58.4% of activity, indicating
+      tenant satisfaction and stability.
+    </p>
+
+    <div class="comparison-metrics" role="region" aria-labelledby="comparison-metrics-title">
+      <h3 class="comparison-metrics__title">Comparison Metrics</h3>
+      <div class="comparison-metrics__cards">
+        <div class="metrics-card">
+          <h3 class="metrics-card__title">Rental Metrics</h3>
+          <div class="metrics-card__rows">
+            <div class="metrics-row">
+              <span class="metrics-row__label">Avg. Rent per Sq. Ft</span>
+              <span class="metrics-row__value metrics-row__value--green">AED 102</span>
+            </div>
+            <div class="metrics-row">
+              <span class="metrics-row__label">YoY Growth</span>
+              <span class="metrics-row__value metrics-row__value--green">+10.4%</span>
+            </div>
+          </div>
+        </div>
+        <div class="metrics-card">
+          <h3 class="metrics-card__title">Contract Distribution</h3>
+          <div class="metrics-card__rows">
+            <div class="metrics-row">
+              <span class="metrics-row__label">New Contracts</span>
+              <span class="metrics-row__value metrics-row__value--green">41.6%</span>
+            </div>
+            <div class="metrics-row">
+              <span class="metrics-row__label">Renewal Contracts</span>
+              <span class="metrics-row__value metrics-row__value--cyan">58.4%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <table class="sr-only chart-data-table">
+      <caption>The Meadows Rental and Contract Comparison Metrics - H1 2025</caption>
+      <thead>
+        <tr>
+          <th scope="col">Category</th>
+          <th scope="col">Metric</th>
+          <th scope="col">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rental Metrics</td>
+          <td>Average Rent per Sq. Ft</td>
+          <td>AED 102</td>
+        </tr>
+        <tr>
+          <td>Rental Metrics</td>
+          <td>Year-over-Year Growth</td>
+          <td>+10.4%</td>
+        </tr>
+        <tr>
+          <td>Contract Distribution</td>
+          <td>New Contracts</td>
+          <td>41.6%</td>
+        </tr>
+        <tr>
+          <td>Contract Distribution</td>
+          <td>Renewal Contracts</td>
+          <td>58.4%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="data-source">Source: Property Monitor, the company analysis</p>
+  </div>
+
+  <!-- 2.4 STACKED BAR (Horizontal Part-to-Whole) -->
+  <div class="component-demo">
+    <h2 class="component-label" id="stacked-bar-title">2.4 Stacked Bar (Part-to-Whole) <span class="component-id-badge">stacked-bar</span></h2>
+
+    <p class="chart-summary">
+      Off-plan transactions dominated The Valley townhouse market at 69.3% of total volume, with ready properties comprising the remaining 30.7%. This distribution reflects the community's development stage and continued buyer confidence in under-construction inventory.
+    </p>
+
+    <section class="stacked-bar-section" aria-labelledby="completion-status-title">
+      <h3 id="completion-status-title" class="stacked-bar-section__title">Transactions by <span class="highlight">Completion Status</span></h3>
+
+      <figure>
+        <div class="stacked-bar-card" role="img" aria-describedby="completion-status-desc">
+          <h4 class="stacked-bar-card__title">Transaction Distribution</h4>
+
+          <div class="stacked-bar">
+            <div class="stacked-bar__segment stacked-bar__segment--primary" style="flex-basis: 69.3%;">
+              <span class="stacked-bar__value">69.3%</span>
+            </div>
+            <div class="stacked-bar__segment stacked-bar__segment--secondary" style="flex-basis: 30.7%;">
+              <span class="stacked-bar__value">30.7%</span>
+            </div>
+          </div>
+
+          <div class="stacked-bar__legend">
+            <div class="stacked-bar__legend-item">
+              <span class="stacked-bar__legend-badge stacked-bar__legend-badge--primary"></span>
+              <span class="stacked-bar__legend-label">Off-plan</span>
+              <span class="stacked-bar__legend-value">69.3%</span>
+            </div>
+            <div class="stacked-bar__legend-item">
+              <span class="stacked-bar__legend-badge stacked-bar__legend-badge--secondary"></span>
+              <span class="stacked-bar__legend-label">Ready</span>
+              <span class="stacked-bar__legend-value">30.7%</span>
+            </div>
+          </div>
+        </div>
+
+        <figcaption id="completion-status-desc" class="sr-only">
+          Horizontal bar showing transaction split: 69.3% off-plan (cyan) and 30.7% ready (green).
+        </figcaption>
+      </figure>
+    </section>
+
+    <table class="sr-only chart-data-table">
+      <caption>The Valley Townhouses - Transactions by Completion Status 2025</caption>
+      <thead>
+        <tr>
+          <th scope="col">Completion Status</th>
+          <th scope="col">Percentage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Off-plan</td>
+          <td>69.3%</td>
+        </tr>
+        <tr>
+          <td>Ready</td>
+          <td>30.7%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="data-source">Source: Property Monitor</p>
+  </div>
+
+  <!-- 2.5 STACKED BAR DUAL (Two Related Distributions Side by Side) -->
+  <div class="component-demo">
+    <h2 class="component-label" id="stacked-bar-dual-title">2.5 Stacked Bar Dual (Two Related Distributions) <span class="component-id-badge">stacked-bar-dual</span></h2>
+
+    <p class="chart-summary">
+      Off-plan properties accounted for 461 of 665 total transactions (69.3%) and AED 1.54B of AED 2.14B total value (71.9%), indicating slightly higher average transaction values for off-plan units.
+    </p>
+
+    <section class="stacked-bar-section" aria-labelledby="completion-dual-title">
+      <h3 id="completion-dual-title" class="stacked-bar-section__title">Completion Status: <span class="highlight">Transactions vs Value</span></h3>
+
+      <div class="stacked-bar-dual">
+        <!-- Transactions Split -->
+        <figure>
+          <div class="stacked-bar-card" role="img" aria-describedby="trans-split-desc">
+            <h4 class="stacked-bar-card__title">Transactions (665 Total)</h4>
+
+            <div class="stacked-bar">
+              <div class="stacked-bar__segment stacked-bar__segment--primary" style="flex-basis: 69.3%;">
+                <span class="stacked-bar__value">69.3%</span>
+              </div>
+              <div class="stacked-bar__segment stacked-bar__segment--secondary" style="flex-basis: 30.7%;">
+                <span class="stacked-bar__value">30.7%</span>
+              </div>
+            </div>
+
+            <div class="stacked-bar__legend">
+              <div class="stacked-bar__legend-item">
+                <span class="stacked-bar__legend-badge stacked-bar__legend-badge--primary"></span>
+                <span class="stacked-bar__legend-label">Off-plan</span>
+                <span class="stacked-bar__legend-value">461</span>
+              </div>
+              <div class="stacked-bar__legend-item">
+                <span class="stacked-bar__legend-badge stacked-bar__legend-badge--secondary"></span>
+                <span class="stacked-bar__legend-label">Ready</span>
+                <span class="stacked-bar__legend-value">204</span>
+              </div>
+            </div>
+          </div>
+          <figcaption id="trans-split-desc" class="sr-only">Transaction split: 461 off-plan (69.3%), 204 ready (30.7%)</figcaption>
+        </figure>
+
+        <!-- Value Split -->
+        <figure>
+          <div class="stacked-bar-card" role="img" aria-describedby="value-split-desc">
+            <h4 class="stacked-bar-card__title">Value (AED 2.14B Total)</h4>
+
+            <div class="stacked-bar">
+              <div class="stacked-bar__segment stacked-bar__segment--primary" style="flex-basis: 71.9%;">
+                <span class="stacked-bar__value">71.9%</span>
+              </div>
+              <div class="stacked-bar__segment stacked-bar__segment--secondary" style="flex-basis: 28.1%;">
+                <span class="stacked-bar__value">28.1%</span>
+              </div>
+            </div>
+
+            <div class="stacked-bar__legend">
+              <div class="stacked-bar__legend-item">
+                <span class="stacked-bar__legend-badge stacked-bar__legend-badge--primary"></span>
+                <span class="stacked-bar__legend-label">Off-plan</span>
+                <span class="stacked-bar__legend-value">AED 1.54B</span>
+              </div>
+              <div class="stacked-bar__legend-item">
+                <span class="stacked-bar__legend-badge stacked-bar__legend-badge--secondary"></span>
+                <span class="stacked-bar__legend-label">Ready</span>
+                <span class="stacked-bar__legend-value">AED 0.60B</span>
+              </div>
+            </div>
+          </div>
+          <figcaption id="value-split-desc" class="sr-only">Value split: AED 1.54B off-plan (71.9%), AED 0.60B ready (28.1%)</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <table class="sr-only chart-data-table">
+      <caption>The Valley Townhouses - Completion Status: Transactions vs Value 2025</caption>
+      <thead>
+        <tr>
+          <th scope="col">Metric</th>
+          <th scope="col">Off-plan</th>
+          <th scope="col">Ready</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Transactions</td>
+          <td>461 (69.3%)</td>
+          <td>204 (30.7%)</td>
+          <td>665</td>
+        </tr>
+        <tr>
+          <td>Value</td>
+          <td>AED 1.54B (71.9%)</td>
+          <td>AED 0.60B (28.1%)</td>
+          <td>AED 2.14B</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="data-source">Source: Property Monitor</p>
+  </div>
+
+</section>
+
+
+<!-- ============================================================================
+     3. DATA TABLES
+     ============================================================================ -->
+
+<section class="component-section" id="data-tables">
+  <h1 class="section-header">3. Data Tables</h1>
+
+  <!-- 3.1 PRICE DATA INSIGHTS TABLE -->
+  <div class="component-demo">
+    <h2 class="component-label" id="price-insights-title">3.1 Price Data Insights Table <span class="component-id-badge">data-table</span></h2>
+
+    <p class="chart-summary">
+      Five-bedroom villas in The Meadows achieved 56.3% year-over-year price appreciation
+      in H1 2025 with average prices of AED 12.99M, while three and four-bedroom configurations
+      experienced transaction volume declines of 25% and 15% respectively.
+    </p>
+
+    <div class="price-data-insights">
+      <h3 class="price-data-insights__title">Price Data Insights</h3>
+      <div class="table-container">
+        <table class="insights-table" aria-describedby="price-insights-title">
+          <caption>The Meadows Villa Prices by Bedroom Configuration - H1 2025</caption>
+          <thead>
+            <tr>
+              <th scope="col" class="col-bedrooms">Bedrooms</th>
+              <th scope="col" class="col-price">Average Price</th>
+              <th scope="col" class="col-transactions">Transactions</th>
+              <th scope="col" class="col-yoy">YoY Change</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="bedroom-label">3 Bedroom</th>
+              <td class="price-value">AED 8,024,889</td>
+              <td class="transaction-value">15</td>
+              <td class="yoy-value negative" aria-label="Decreased 25 percent">-25%</td>
+            </tr>
+            <tr>
+              <th scope="row" class="bedroom-label">4 Bedroom</th>
+              <td class="price-value">AED 12,105,588</td>
+              <td class="transaction-value">34</td>
+              <td class="yoy-value negative" aria-label="Decreased 15 percent">-15%</td>
+            </tr>
+            <tr>
+              <th scope="row" class="bedroom-label">5 Bedroom</th>
+              <td class="price-value">AED 12,997,300</td>
+              <td class="transaction-value">25</td>
+              <td class="yoy-value positive" aria-label="Increased 56.3 percent">+56.3%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="data-source">Source: Property Monitor, the company analysis</p>
+  </div>
+
+  <!-- 3.2 KEY DIFFERENCES SUMMARY TABLE -->
+  <div class="component-demo">
+    <h2 class="component-label" id="key-differences-title">3.2 Key Differences Summary Table <span class="component-id-badge">comparison-table</span></h2>
+
+    <p class="chart-summary">
+      Comparison table demonstrating the optimal use cases and content types for
+      different report formatting approaches in BRAND real estate documentation.
+    </p>
+
+    <div class="key-differences">
+      <h3 class="key-differences__title">Key Differences Summary</h3>
+      <div class="table-container">
+        <table class="differences-table" aria-describedby="key-differences-title">
+          <caption>Comparison of Report Formatting Options</caption>
+          <thead>
+            <tr>
+              <th scope="col" class="col-feature">Feature</th>
+              <th scope="col" class="col-section">Option A</th>
+              <th scope="col" class="col-list">Option B</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="feature-label">Best For</th>
+              <td>Paragraphs, analysis, explanations</td>
+              <td>Key points, features, factors</td>
+            </tr>
+            <tr>
+              <th scope="row" class="feature-label">Content Type</th>
+              <td>Single rich text editor</td>
+              <td>Repeatable item fields</td>
+            </tr>
+            <tr>
+              <th scope="row" class="feature-label">Use Cases</th>
+              <td>Market commentary, outlook</td>
+              <td>Recommendations, factors, benefits</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="data-source">Source: the company documentation standards</p>
+  </div>
+
+</section>
+
+
+<!-- ============================================================================
+     4. BAR CHARTS
+     ============================================================================ -->
+
+<section class="component-section" id="column-charts">
+  <h1 class="section-header">4. Column and Bar Charts</h1>
+
+  <!-- 4.1 GROUPED COLUMN CHART -->
+  <div class="component-demo">
+    <h2 class="component-label" id="grouped-column">4.1 Grouped Column Chart (Period Comparison) <span class="component-id-badge">grouped-column</span></h2>
+
+    <p class="chart-summary">
+      Dubai apartment prices showed mixed trends between Q3 2024 and Q3 2025. Studio apartments remained stable at AED 1,435,000, while 1-bedroom units saw significant appreciation of 83% to AED 1,782,500. 2-bedroom apartments declined 20% to AED 1,242,500, and 3-bedroom units increased 55% to AED 1,850,000.
+    </p>
+
+    <figure>
+      <div class="chart-card">
+        <h2 class="chart-card__title">Average Price Comparison: <span class="highlight">2024 vs 2025</span></h2>
+        <div class="chart-wrapper">
+          <div class="y-axis" aria-hidden="true">
+            <span class="y-axis-label">2,5M AED</span>
+            <span class="y-axis-label">2M AED</span>
+            <span class="y-axis-label">1,5M AED</span>
+            <span class="y-axis-label">1M AED</span>
+            <span class="y-axis-label">500K AED</span>
+          </div>
+          <div class="chart-area" role="img" aria-describedby="multibar-desc">
+            <div class="grid-container grid-container--bar">
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="bars-container bars-container--multibar">
+                <div class="bar-group">
+                  <div class="bar bar--cyan" style="height: 57.4%;"></div>
+                  <div class="bar bar--green" style="height: 57.4%;"></div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar bar--cyan" style="height: 38.9%;"></div>
+                  <div class="bar bar--green" style="height: 71.3%;"></div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar bar--cyan" style="height: 62.5%;"></div>
+                  <div class="bar bar--green" style="height: 49.7%;"></div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar bar--cyan" style="height: 47.6%;"></div>
+                  <div class="bar bar--green" style="height: 74.0%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="x-axis x-axis--multibar">
+              <span class="x-axis-label">Studio</span>
+              <span class="x-axis-label">1 Bed</span>
+              <span class="x-axis-label">2 Bed</span>
+              <span class="x-axis-label">3 Bed</span>
+            </div>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <div class="legend-item">
+            <div class="legend-badge legend-badge--cyan"></div>
+            <span class="legend-label">Q3 2024</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-badge legend-badge--green"></div>
+            <span class="legend-label">Q3 2025</span>
+          </div>
+        </div>
+      </div>
+
+      <figcaption id="multibar-desc">
+        Grouped column chart comparing average apartment prices by bedroom type between Q3 2024 and Q3 2025 in Dubai.
+      </figcaption>
+
+      <table class="sr-only chart-data-table">
+        <caption>Average Apartment Prices by Bedroom Type - Q3 2024 vs Q3 2025</caption>
+        <thead>
+          <tr>
+            <th scope="col">Bedroom Type</th>
+            <th scope="col">Q3 2024 (AED)</th>
+            <th scope="col">Q3 2025 (AED)</th>
+            <th scope="col">YoY Change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Studio</td>
+            <td>1,435,000</td>
+            <td>1,435,000</td>
+            <td>0%</td>
+          </tr>
+          <tr>
+            <td>1 Bedroom</td>
+            <td>972,500</td>
+            <td>1,782,500</td>
+            <td>+83%</td>
+          </tr>
+          <tr>
+            <td>2 Bedroom</td>
+            <td>1,562,500</td>
+            <td>1,242,500</td>
+            <td>-20%</td>
+          </tr>
+          <tr>
+            <td>3 Bedroom</td>
+            <td>1,190,000</td>
+            <td>1,850,000</td>
+            <td>+55%</td>
+          </tr>
+        </tbody>
+      </table>
+    </figure>
+
+    <p class="data-source">Source: Property Monitor, the company analysis</p>
+  </div>
+
+  <!-- 4.2 COLUMN CHART -->
+  <div class="component-demo">
+    <h2 class="component-label" id="column">4.2 Column Chart (Distribution) <span class="component-id-badge">column</span></h2>
+
+    <p class="chart-summary">
+      Q3 2025 transaction volume across Dubai bedroom types shows 3-bedroom units dominated with 183 transactions, representing nearly half of all activity. 2-bedroom units recorded 73 transactions, while 4-bedroom, 1-bedroom, and studio configurations saw 70, 39, and 10 transactions respectively.
+    </p>
+
+    <figure>
+      <div class="chart-card">
+        <h2 class="chart-card__title">Transaction Volume by Bedroom Type - <span class="highlight">Q3 2025</span></h2>
+        <div class="chart-wrapper">
+          <div class="y-axis" aria-hidden="true">
+            <span class="y-axis-label">200</span>
+            <span class="y-axis-label">150</span>
+            <span class="y-axis-label">100</span>
+            <span class="y-axis-label">50</span>
+            <span class="y-axis-label">0</span>
+          </div>
+          <div class="chart-area" role="img" aria-describedby="singlebar-desc">
+            <div class="grid-container grid-container--bar">
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="bars-container bars-container--single">
+                <div class="bar-wrapper">
+                  <div class="bar bar--cyan bar--labeled" style="height: 5%;">
+                    <span class="bar__value">10</span>
+                  </div>
+                  <span class="bar__label">Studio</span>
+                </div>
+                <div class="bar-wrapper">
+                  <div class="bar bar--cyan bar--labeled" style="height: 19.5%;">
+                    <span class="bar__value">39</span>
+                  </div>
+                  <span class="bar__label">1 Bed</span>
+                </div>
+                <div class="bar-wrapper">
+                  <div class="bar bar--cyan bar--labeled" style="height: 36.5%;">
+                    <span class="bar__value">73</span>
+                  </div>
+                  <span class="bar__label">2 Bed</span>
+                </div>
+                <div class="bar-wrapper">
+                  <div class="bar bar--cyan bar--labeled" style="height: 91.5%;">
+                    <span class="bar__value">183</span>
+                  </div>
+                  <span class="bar__label">3 Bed</span>
+                </div>
+                <div class="bar-wrapper">
+                  <div class="bar bar--cyan bar--labeled" style="height: 35%;">
+                    <span class="bar__value">70</span>
+                  </div>
+                  <span class="bar__label">4 Bed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <figcaption id="singlebar-desc">
+        Column chart showing transaction volume distribution across different bedroom types in Q3 2025.
+      </figcaption>
+
+      <table class="sr-only chart-data-table">
+        <caption>Transaction Volume by Bedroom Type - Q3 2025</caption>
+        <thead>
+          <tr>
+            <th scope="col">Bedroom Type</th>
+            <th scope="col">Transactions</th>
+            <th scope="col">Percentage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Studio</td>
+            <td>10</td>
+            <td>2.7%</td>
+          </tr>
+          <tr>
+            <td>1 Bedroom</td>
+            <td>39</td>
+            <td>10.4%</td>
+          </tr>
+          <tr>
+            <td>2 Bedroom</td>
+            <td>73</td>
+            <td>19.5%</td>
+          </tr>
+          <tr>
+            <td>3 Bedroom</td>
+            <td>183</td>
+            <td>48.8%</td>
+          </tr>
+          <tr>
+            <td>4 Bedroom</td>
+            <td>70</td>
+            <td>18.7%</td>
+          </tr>
+        </tbody>
+      </table>
+    </figure>
+
+    <p class="data-source">Source: Property Monitor, the company analysis</p>
+  </div>
+
+  <!-- 4.3 STACKED COLUMN CHART -->
+  <div class="component-demo">
+    <h2 class="component-label" id="stacked-column">4.3 Stacked Column Chart (Composition) <span class="component-id-badge">stacked-column</span></h2>
+
+    <p class="chart-summary">
+      Transaction composition across Dubai communities shows varying preference for off-plan versus ready properties. Nad Al Sheba leads ready property transactions at 82%, followed by Palm Jumeirah at 77%. The Meadows shows balanced activity with 52% ready properties, while Mudon favors off-plan at 66.5%.
+    </p>
+
+    <figure>
+      <div class="chart-card">
+        <h2 class="chart-card__title">Transaction Composition: Off-plan vs Ready - <span class="highlight">Multiple Communities</span></h2>
+        <div class="chart-wrapper">
+          <div class="y-axis" aria-hidden="true">
+            <span class="y-axis-label">100%</span>
+            <span class="y-axis-label">75%</span>
+            <span class="y-axis-label">50%</span>
+            <span class="y-axis-label">25%</span>
+            <span class="y-axis-label">0%</span>
+          </div>
+          <div class="chart-area" role="img" aria-describedby="stacked-desc">
+            <div class="grid-container grid-container--bar">
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="bars-container bars-container--stacked">
+                <div class="bar-column">
+                  <div class="vertical-stacked-bar">
+                    <div class="bar-segment bar-segment--cyan" style="flex: 66.5;"></div>
+                    <div class="bar-segment bar-segment--green" style="flex: 33.5;"></div>
+                  </div>
+                </div>
+                <div class="bar-column">
+                  <div class="vertical-stacked-bar">
+                    <div class="bar-segment bar-segment--cyan" style="flex: 48;"></div>
+                    <div class="bar-segment bar-segment--green" style="flex: 52;"></div>
+                  </div>
+                </div>
+                <div class="bar-column">
+                  <div class="vertical-stacked-bar">
+                    <div class="bar-segment bar-segment--cyan" style="flex: 23;"></div>
+                    <div class="bar-segment bar-segment--green" style="flex: 77;"></div>
+                  </div>
+                </div>
+                <div class="bar-column">
+                  <div class="vertical-stacked-bar">
+                    <div class="bar-segment bar-segment--cyan" style="flex: 18;"></div>
+                    <div class="bar-segment bar-segment--green" style="flex: 82;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="x-axis x-axis--stacked">
+              <span class="x-axis-label">Mudon</span>
+              <span class="x-axis-label">The Meadows</span>
+              <span class="x-axis-label">Palm Jumeirah</span>
+              <span class="x-axis-label">Nad Al Sheba</span>
+            </div>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <div class="legend-item">
+            <div class="legend-badge legend-badge--cyan"></div>
+            <span class="legend-label">Off-plan</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-badge legend-badge--green"></div>
+            <span class="legend-label">Ready</span>
+          </div>
+        </div>
+      </div>
+
+      <figcaption id="stacked-desc">
+        Stacked column chart showing percentage distribution of off-plan versus ready property transactions across four Dubai communities.
+      </figcaption>
+
+      <table class="sr-only chart-data-table">
+        <caption>Transaction Composition: Off-plan vs Ready - Multiple Communities</caption>
+        <thead>
+          <tr>
+            <th scope="col">Community</th>
+            <th scope="col">Off-plan (%)</th>
+            <th scope="col">Ready (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mudon</td>
+            <td>66.5%</td>
+            <td>33.5%</td>
+          </tr>
+          <tr>
+            <td>The Meadows</td>
+            <td>48%</td>
+            <td>52%</td>
+          </tr>
+          <tr>
+            <td>Palm Jumeirah</td>
+            <td>23%</td>
+            <td>77%</td>
+          </tr>
+          <tr>
+            <td>Nad Al Sheba</td>
+            <td>18%</td>
+            <td>82%</td>
+          </tr>
+        </tbody>
+      </table>
+    </figure>
+
+    <p class="data-source">Source: Property Monitor, the company analysis</p>
+  </div>
+
+  <!-- 4.4 BAR CHART -->
+  <div class="component-demo">
+    <h2 class="component-label" id="bar">4.4 Bar Chart (Rankings) <span class="component-id-badge">bar</span></h2>
+
+    <p class="chart-summary">
+      Sobha Hartland dominated Q3 2025 Dubai transaction volume with 293 sales, significantly outpacing Palm Jumeirah Apartments at 189 transactions. Mudon Townhouses ranked third with 108 sales, followed by The Meadows Villas at 78 and Nad Al Sheba at 58 transactions.
+    </p>
+
+    <figure>
+      <div class="horizontal-chart">
+        <h2 class="horizontal-chart__title">Top 5 Communities by Transaction Volume - <span class="highlight">Q3 2025</span></h2>
+        <div class="horizontal-chart__container" role="img" aria-describedby="horizontal-desc">
+          <div class="horizontal-chart__scale" aria-hidden="true">
+            <span>0</span>
+            <span>300</span>
+          </div>
+          <div class="horizontal-bar-group">
+            <div class="horizontal-bar__label">Sobha Hartland</div>
+            <div class="horizontal-bar__wrapper">
+              <div class="horizontal-bar" style="--bar-width: 97.67%;">
+                <span class="horizontal-bar__value">293</span>
+              </div>
+            </div>
+          </div>
+          <div class="horizontal-bar-group">
+            <div class="horizontal-bar__label">Palm Jumeirah Apartments</div>
+            <div class="horizontal-bar__wrapper">
+              <div class="horizontal-bar" style="--bar-width: 63%;">
+                <span class="horizontal-bar__value">189</span>
+              </div>
+            </div>
+          </div>
+          <div class="horizontal-bar-group">
+            <div class="horizontal-bar__label">Mudon Townhouses</div>
+            <div class="horizontal-bar__wrapper">
+              <div class="horizontal-bar" style="--bar-width: 36%;">
+                <span class="horizontal-bar__value">108</span>
+              </div>
+            </div>
+          </div>
+          <div class="horizontal-bar-group">
+            <div class="horizontal-bar__label">The Meadows Villas</div>
+            <div class="horizontal-bar__wrapper">
+              <div class="horizontal-bar" style="--bar-width: 26%;">
+                <span class="horizontal-bar__value">78</span>
+              </div>
+            </div>
+          </div>
+          <div class="horizontal-bar-group">
+            <div class="horizontal-bar__label">Nad Al Sheba</div>
+            <div class="horizontal-bar__wrapper">
+              <div class="horizontal-bar" style="--bar-width: 19.33%;">
+                <span class="horizontal-bar__value">58</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <figcaption id="horizontal-desc">
+        Bar chart ranking the top 5 Dubai communities by transaction volume in Q3 2025.
+      </figcaption>
+
+      <table class="sr-only chart-data-table">
+        <caption>Top 5 Communities by Transaction Volume - Q3 2025</caption>
+        <thead>
+          <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Community</th>
+            <th scope="col">Transactions</th>
+            <th scope="col">Market Share</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Sobha Hartland</td>
+            <td>293</td>
+            <td>40.4%</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Palm Jumeirah Apartments</td>
+            <td>189</td>
+            <td>26.0%</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Mudon Townhouses</td>
+            <td>108</td>
+            <td>14.9%</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>The Meadows Villas</td>
+            <td>78</td>
+            <td>10.8%</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Nad Al Sheba</td>
+            <td>58</td>
+            <td>8.0%</td>
+          </tr>
+        </tbody>
+      </table>
+    </figure>
+
+    <p class="data-source">Source: Property Monitor, the company analysis</p>
+  </div>
+
+</section>
+
+
+<!-- ============================================================================
+     5. LINE CHARTS
+     ============================================================================ -->
+
+<section class="component-section" id="line-charts">
+  <h1 class="section-header">5. Line Charts</h1>
+
+  <!-- 5.1 AREA LINE CHART -->
+  <div class="component-demo">
+    <h2 class="component-label" id="area-line">5.1 Area Line Chart (Time Series) <span class="component-id-badge">area-line</span></h2>
+
+    <p class="chart-summary">
+      Villa prices in The Meadows increased 33.5% year-over-year, rising from AED 2,180/sq.ft in Q1 2024
+      to AED 2,911/sq.ft in H1 2025. The data shows consistent quarterly appreciation reflecting
+      strong demand for established villa communities.
+    </p>
+
+    <figure>
+      <div class="chart-card">
+        <h2 class="chart-card__title">Average Price per Sq. Ft - <span class="highlight">The Meadows Villas</span></h2>
+        <div class="chart-wrapper">
+          <div class="y-axis" aria-hidden="true">
+            <span class="y-axis-label">3,000</span>
+            <span class="y-axis-label">2,500</span>
+            <span class="y-axis-label">2,000</span>
+            <span class="y-axis-label">1,500</span>
+          </div>
+          <div class="chart-area" role="img" aria-describedby="desc-area-line">
+            <div class="grid-container grid-container--line">
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="vertical-grid-lines">
+                <div class="vertical-grid-line"></div>
+                <div class="vertical-grid-line"></div>
+                <div class="vertical-grid-line"></div>
+                <div class="vertical-grid-line"></div>
+                <div class="vertical-grid-line"></div>
+              </div>
+              <svg class="line-chart" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="areaGradient1" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#9DE6FD"/>
+                    <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path class="area-fill" d="M0,84.4 L25,68.5 L50,46.7 L75,22.2 L100,7 L100,100 L0,100 Z" fill="url(#areaGradient1)"/>
+                <path class="line-path" d="M0,84.4 L25,68.5 L50,46.7 L75,22.2 L100,7" fill="none" stroke="#01AEE5" stroke-width="1" stroke-dasharray="1 1" vector-effect="non-scaling-stroke"/>
+              </svg>
+              <div class="data-points">
+                <div class="data-point" style="left: 0%; top: 84.4%;">
+                  <span class="data-point__label">2,180</span>
+                </div>
+                <div class="data-point" style="left: 25%; top: 68.5%;">
+                  <span class="data-point__label">2,340</span>
+                </div>
+                <div class="data-point" style="left: 50%; top: 46.7%;">
+                  <span class="data-point__label">2,520</span>
+                </div>
+                <div class="data-point" style="left: 75%; top: 22.2%;">
+                  <span class="data-point__label">2,710</span>
+                </div>
+                <div class="data-point" style="left: 100%; top: 7%;">
+                  <span class="data-point__label">2,911</span>
+                </div>
+              </div>
+            </div>
+            <div class="x-axis">
+              <span class="x-axis-label">Q1 2024</span>
+              <span class="x-axis-label">Q2 2024</span>
+              <span class="x-axis-label">Q3 2024</span>
+              <span class="x-axis-label">Q4 2024</span>
+              <span class="x-axis-label">H1 2025</span>
+            </div>
+          </div>
+        </div>
+        <p class="chart-footnote">Data shows consistent upward price trend from Q1 2024 to H1 2025</p>
+      </div>
+
+      <figcaption id="desc-area-line">
+        Area line chart showing quarterly price progression for The Meadows villas from Q1 2024 through H1 2025,
+        demonstrating consistent upward price trend.
+      </figcaption>
+
+      <table class="sr-only chart-data-table">
+        <caption>Average Price per Square Foot - The Meadows Villas (Q1 2024 - H1 2025)</caption>
+        <thead>
+          <tr>
+            <th scope="col">Period</th>
+            <th scope="col">Price (AED/sq.ft)</th>
+            <th scope="col">Quarter-over-Quarter Change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Q1 2024</td>
+            <td>2,180</td>
+            <td>Baseline</td>
+          </tr>
+          <tr>
+            <td>Q2 2024</td>
+            <td>2,340</td>
+            <td>+7.3%</td>
+          </tr>
+          <tr>
+            <td>Q3 2024</td>
+            <td>2,520</td>
+            <td>+7.7%</td>
+          </tr>
+          <tr>
+            <td>Q4 2024</td>
+            <td>2,710</td>
+            <td>+7.5%</td>
+          </tr>
+          <tr>
+            <td>H1 2025</td>
+            <td>2,911</td>
+            <td>+6.0%</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">Total appreciation Q1 2024 to H1 2025: +33.5%</td>
+          </tr>
+        </tfoot>
+      </table>
+    </figure>
+
+    <p class="data-source">Source: Property Monitor, the company analysis</p>
+  </div>
+
+  <!-- 5.2 MULTI-LINE CHART -->
+  <div class="component-demo">
+    <h2 class="component-label" id="multi-line">5.2 Multi-Line Chart (Comparison) <span class="component-id-badge">multi-line</span></h2>
+
+    <p class="chart-summary">
+      Comparative analysis of villa price trends across three Dubai communities from Q1 2024 to H1 2025.
+      The Meadows showed steady appreciation throughout the period. Mudon exhibited the most volatility with
+      strong mid-year gains. Reem maintained consistent growth with moderate fluctuations.
+    </p>
+
+    <figure>
+      <div class="chart-card">
+        <h2 class="chart-card__title">Price Trend Comparison - <span class="highlight">Multiple Communities</span></h2>
+        <div class="chart-wrapper">
+          <div class="chart-area" role="img" aria-describedby="desc-multi-line">
+            <div class="grid-container grid-container--line">
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="grid-line"></div>
+              <div class="vertical-grid-lines">
+                <div class="vertical-grid-line"></div>
+                <div class="vertical-grid-line"></div>
+                <div class="vertical-grid-line"></div>
+                <div class="vertical-grid-line"></div>
+                <div class="vertical-grid-line"></div>
+              </div>
+              <svg class="line-chart" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path class="trend-line trend-line--green" d="M0,99.4 L18.9,54.8 L36.9,80.8 L54.5,45.5 L72.4,61.3 L90.3,44.1 L100,99.4" fill="none" stroke="#57CE9F" stroke-width="1" vector-effect="non-scaling-stroke"/>
+                <path class="trend-line trend-line--cyan" d="M0,99.2 L17.4,75.2 L34,99.2 L50.2,17.8 L66.7,52 L83.2,29.3 L92.1,99.2" fill="none" stroke="#01AEE5" stroke-width="1" vector-effect="non-scaling-stroke"/>
+                <path class="trend-line trend-line--orange" d="M0.2,99.2 L19.1,99.2 L37,68.6 L54.6,87.1 L72.4,50 L90.3,73.7 L100,50.9" fill="none" stroke="#E7AC65" stroke-width="1" vector-effect="non-scaling-stroke"/>
+              </svg>
+            </div>
+            <div class="x-axis">
+              <span class="x-axis-label">Q1 2024</span>
+              <span class="x-axis-label">Q2 2024</span>
+              <span class="x-axis-label">Q3 2024</span>
+              <span class="x-axis-label">Q4 2024</span>
+              <span class="x-axis-label">H1 2025</span>
+            </div>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <div class="legend-item">
+            <span class="legend-badge legend-badge--green"></span>
+            <span class="legend-label">The Meadows</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-badge legend-badge--cyan"></span>
+            <span class="legend-label">Mudon</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-badge legend-badge--orange"></span>
+            <span class="legend-label">Reem</span>
+          </div>
+        </div>
+      </div>
+
+      <figcaption id="desc-multi-line">
+        Multi-line chart comparing quarterly price trends for The Meadows, Mudon, and Reem villa communities
+        from Q1 2024 through H1 2025.
+      </figcaption>
+
+      <table class="sr-only chart-data-table">
+        <caption>Villa Price Trend Comparison - The Meadows, Mudon, Reem (Q1 2024 - H1 2025)</caption>
+        <thead>
+          <tr>
+            <th scope="col">Period</th>
+            <th scope="col">The Meadows</th>
+            <th scope="col">Mudon</th>
+            <th scope="col">Reem</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Q1 2024</td>
+            <td>Baseline (100)</td>
+            <td>Baseline (100)</td>
+            <td>Baseline (100)</td>
+          </tr>
+          <tr>
+            <td>Q2 2024</td>
+            <td>+7.3%</td>
+            <td>+4.5%</td>
+            <td>+2.1%</td>
+          </tr>
+          <tr>
+            <td>Q3 2024</td>
+            <td>+12.8%</td>
+            <td>+15.2%</td>
+            <td>+8.4%</td>
+          </tr>
+          <tr>
+            <td>Q4 2024</td>
+            <td>+21.5%</td>
+            <td>+22.8%</td>
+            <td>+14.6%</td>
+          </tr>
+          <tr>
+            <td>H1 2025</td>
+            <td>+33.5%</td>
+            <td>+28.7%</td>
+            <td>+19.2%</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4">Note: Values represent cumulative growth from Q1 2024 baseline</td>
+          </tr>
+        </tfoot>
+      </table>
+    </figure>
+
+    <p class="data-source">Source: Property Monitor, the company analysis</p>
+  </div>
+
+</section>
+
+
+<!-- ============================================================================
+     6. CONTENT BLOCKS
+     ============================================================================ -->
+
+<section class="component-section" id="content-blocks">
+  <h1 class="section-header">6. Content Blocks</h1>
+
+  <!-- 6.1 MARKET DYNAMICS (TEXT + IMAGE) -->
+  <div class="component-demo">
+    <h2 class="component-label" id="dynamics-title">6.1 Market Dynamics (Text + Image) <span class="component-id-badge">market-dynamics</span></h2>
+
+    <article class="market-dynamics" role="article" aria-labelledby="dynamics-title">
+      <div class="market-dynamics__wrapper">
+        <div class="market-dynamics__text">
+          <h2 class="market-dynamics__title">Market Dynamics Analysis</h2>
+          <p class="market-dynamics__paragraph market-dynamics__paragraph--first">
+            The Meadows villa market demonstrated exceptional resilience in H1 2025, with supply constraints driving significant price appreciation across most property configurations. The 33.5% year-over-year increase in per-square-foot values reflects sustained investor confidence and genuine end-user demand from families seeking established communities with mature infrastructure.
+          </p>
+        </div>
+        <div class="market-dynamics__image">
+          <img src="https://placehold.co/478x475/e9e9e9/6D6E70?text=Villa+Image" alt="Modern villa exterior in The Meadows community featuring landscaped gardens and contemporary architecture" class="market-dynamics__img">
+        </div>
+        <div class="market-dynamics__additional">
+          <p class="market-dynamics__paragraph">
+            Unlike speculative cycles observed in previous boom periods, the current market dynamics are characterized by fundamental demand drivers including visa reform initiatives, enhanced investor protection frameworks, and Dubai's continued economic diversification.
+          </p>
+          <p class="market-dynamics__paragraph">
+            The divergence between declining transaction volume and rising prices indicates inventory constraints in this premium segment. Property owners are increasingly selective about selling opportunities.
+          </p>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- 6.2 INVESTOR CONSIDERATIONS (ICON CARDS GRID) -->
+  <div class="component-demo">
+    <h2 class="component-label" id="investor-title">6.2 Investor Considerations (Icon Cards Grid) <span class="component-id-badge">investor-considerations</span></h2>
+
+    <p class="chart-summary">
+      The company advises prospective buyers to consider entry timing, configuration selection, rental strategy, holding period, and exit flexibility when investing in The Meadows villa market.
+    </p>
+
+    <div class="investor-considerations">
+      <h2 class="investor-considerations__title">Investor Considerations</h2>
+      <p class="investor-considerations__subtitle">The company advises prospective buyers and current owners to consider:</p>
+      <div class="investor-considerations__grid" role="list">
+        <article class="consideration-card" role="listitem">
+          <div class="consideration-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="#01AEE5" stroke-width="1.5"/>
+              <path d="M12 6v6l4 2" stroke="#01AEE5" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="consideration-card__title">Entry Timing</h3>
+          <p class="consideration-card__description">Strong H1 appreciation may have captured significant near-term gains; careful valuation analysis essential</p>
+        </article>
+        <article class="consideration-card" role="listitem">
+          <div class="consideration-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 17l6-6 4 4 8-8" stroke="#01AEE5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M17 7h4v4" stroke="#01AEE5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="consideration-card__title">Configuration Selection</h3>
+          <p class="consideration-card__description">Four and five-bedroom villas demonstrate strongest transaction liquidity and appreciation potential</p>
+        </article>
+        <article class="consideration-card" role="listitem">
+          <div class="consideration-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="10" width="4" height="10" stroke="#01AEE5" stroke-width="1.5"/>
+              <rect x="10" y="6" width="4" height="14" stroke="#01AEE5" stroke-width="1.5"/>
+              <rect x="17" y="2" width="4" height="18" stroke="#01AEE5" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3 class="consideration-card__title">Rental Strategy</h3>
+          <p class="consideration-card__description">Lower yields versus newer developments offset by capital appreciation potential and tenant stability</p>
+        </article>
+        <article class="consideration-card consideration-card--wide" role="listitem">
+          <div class="consideration-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="#01AEE5" stroke-width="1.5"/>
+              <path d="M8 12l2 2 4-4" stroke="#01AEE5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="consideration-card__title">Holding Period</h3>
+          <p class="consideration-card__description">Established communities like The Meadows typically reward medium to long-term investment horizons</p>
+        </article>
+        <article class="consideration-card consideration-card--wide" role="listitem">
+          <div class="consideration-card__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2v4m0 12v4M2 12h4m12 0h4" stroke="#01AEE5" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="12" cy="12" r="6" stroke="#01AEE5" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3 class="consideration-card__title">Exit Flexibility</h3>
+          <p class="consideration-card__description">Ready property status and consistent transaction activity provide good liquidity for future resale</p>
+        </article>
+      </div>
+    </div>
+
+    <p class="data-source">Source: the company investment analysis team</p>
+  </div>
+
+</section>
+
+
+</body>
+</html>

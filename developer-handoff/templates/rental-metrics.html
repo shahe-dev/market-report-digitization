@@ -1,0 +1,49 @@
+<!-- TEMPLATE: rentalMetrics -->
+<section aria-labelledby="rental-metrics-section" class="indicators-block">
+  <h2 id="rental-metrics-section" class="indicators-block__title">Rental Market Metrics - <span class="highlight">{{metadata.period}}</span></h2>
+  <p class="chart-summary" style="margin-top: 0;">{{enhanced.chartSummaries.rentalMetrics}}</p>
+
+  <div class="indicators">
+    <!-- Primary: Rent per Sq Ft -->
+    <div class="indicator-card indicator-card--primary">
+      <div class="indicator-card__content">
+        <span class="indicator-card__label">Average Rent per Sq. Ft</span>
+        <span class="indicator-card__value">{{rentalMetrics.rentPerFt}}</span>
+      </div>
+      {{IF rentalMetrics.yoyGrowth}}
+      <span class="indicator-card__label" style="opacity: 0.85;">+{{rentalMetrics.yoyGrowth}}% YoY</span>
+      {{END IF}}
+    </div>
+
+    <!-- Secondary: Gross Rental Yield -->
+    <div class="indicator-card indicator-card--secondary">
+      <div class="indicator-card__content">
+        <span class="indicator-card__value indicator-card__value--cyan">{{grossRentYield}}%</span>
+        <span class="indicator-card__label">Gross Rental Yield</span>
+      </div>
+    </div>
+
+    <!-- Primary: Total Rental Transactions -->
+    <div class="indicator-card indicator-card--primary">
+      <div class="indicator-card__content">
+        <span class="indicator-card__label">Total Rental Transactions</span>
+        <span class="indicator-card__value">{{totalRentalTransactions}}</span>
+      </div>
+      {{IF rentalTransactionGrowth}}
+      <span class="indicator-card__label" style="opacity: 0.85;">{{FORMAT_SIGN(rentalTransactionGrowth)}}% YoY</span>
+      {{END IF}}
+    </div>
+
+    <!-- Secondary: Total Rental Value -->
+    <div class="indicator-card indicator-card--secondary">
+      <div class="indicator-card__content">
+        <span class="indicator-card__value indicator-card__value--cyan">{{totalRentalValue}}</span>
+        <span class="indicator-card__label">Total Rental Value</span>
+      </div>
+      {{IF rentalValueGrowth}}
+      <span style="font-size: 14px; font-weight: 700; color: var(--color-{{SIGN(rentalValueGrowth)}});">{{FORMAT_SIGN(rentalValueGrowth)}}% YoY</span>
+      {{END IF}}
+    </div>
+  </div>
+  <p class="data-source">Source: {{rentalMetricsDataSource}}</p>
+</section>

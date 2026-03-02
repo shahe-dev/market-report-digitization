@@ -1,0 +1,77 @@
+<!-- TEMPLATE: priceInsightsTable / rentalInsightsTable -->
+<!--
+  Reused for both price and rental insights. The only differences are:
+  - The heading text
+  - The column headers
+  - The data source array
+
+  FOR priceInsightsTable:
+    sectionId = "price-insights"
+    heading = "Average Resale Price by"
+    chartSummary = enhanced.chartSummaries.priceInsightsTable
+    priceColumnHeader = "Average Price"
+    priceYoyHeader = "Price YoY"
+    dataRows = priceInsights[]
+    row.bedrooms = priceInsights[i].bedrooms
+    row.price = priceInsights[i].averagePrice
+    row.priceYoy = priceInsights[i].priceYoyChange
+    row.transactions = priceInsights[i].transactions
+    row.transYoy = priceInsights[i].transactionYoyChange
+    figcaption = priceInsightsFigcaption
+    dataSource = priceInsightsDataSource
+
+  FOR rentalInsightsTable:
+    sectionId = "rental-insights"
+    heading = "Average Rental Price by"
+    chartSummary = enhanced.chartSummaries.rentalInsightsTable
+    priceColumnHeader = "Average Rent"
+    priceYoyHeader = "Rent YoY"
+    dataRows = rentalInsights[]
+    row.bedrooms = rentalInsights[i].bedrooms
+    row.price = rentalInsights[i].averageRent
+    row.priceYoy = rentalInsights[i].rentYoyChange
+    row.transactions = rentalInsights[i].transactions
+    row.transYoy = rentalInsights[i].transactionYoyChange
+    figcaption = rentalInsightsFigcaption
+    dataSource = rentalInsightsDataSource
+-->
+<section aria-labelledby="{{sectionId}}" class="price-data-insights">
+  <h2 id="{{sectionId}}" class="price-data-insights__title">{{heading}} <span class="highlight">Bedroom</span></h2>
+  <p class="chart-summary" style="margin-top: 0;">{{chartSummary}}</p>
+
+  <figure>
+    <div class="table-container">
+      <table class="insights-table" aria-label="{{ariaLabel}}">
+        <caption class="sr-only">{{figcaption}}</caption>
+        <thead>
+          <tr>
+            <th class="col-bedrooms" scope="col">Bedrooms</th>
+            <th class="col-price" scope="col">{{priceColumnHeader}}</th>
+            <th class="col-yoy" scope="col">{{priceYoyHeader}}</th>
+            <th class="col-transactions" scope="col">Transactions</th>
+            <th class="col-trans-yoy" scope="col">Trans. YoY</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{FOR row IN dataRows}}
+          <tr>
+            <td class="bedroom-label">{{row.bedrooms}}</td>
+            <td>{{row.price}}</td>
+            <td class="yoy-value {{SIGN(row.priceYoy)}}">{{FORMAT_YOY(row.priceYoy)}}</td>
+            <td>{{row.transactions}}</td>
+            <td class="yoy-value {{SIGN(row.transYoy)}}">{{FORMAT_YOY(row.transYoy)}}</td>
+          </tr>
+          {{END FOR}}
+        </tbody>
+      </table>
+    </div>
+    <figcaption class="sr-only">{{figcaption}}</figcaption>
+  </figure>
+  <p class="data-source">Source: {{dataSource}}</p>
+</section>
+
+<!--
+HELPER FUNCTIONS:
+- FORMAT_YOY(value): If value == "0", return "0%". If positive, return "+{value}%". If negative, return "{value}%" (already has minus sign).
+- SIGN(value): returns "positive" | "negative" | "neutral"
+-->

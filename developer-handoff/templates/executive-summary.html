@@ -1,0 +1,33 @@
+<!-- TEMPLATE: executiveSummary -->
+<section aria-labelledby="executive-summary">
+  <div class="executive-summary-card">
+    <div class="executive-summary-card__content">
+      <h2 id="executive-summary" class="executive-summary-card__title">Executive Summary</h2>
+      <p class="executive-summary-card__description">
+        {{enhanced.executiveSummaryEnhanced}}
+      </p>
+    </div>
+    <div class="executive-summary-card__chart" aria-hidden="true">
+      <svg class="mini-chart" viewBox="0 0 288 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="17" width="287.098" height="1" fill="#E9E9E9"/>
+        <rect x="0" y="61" width="287.098" height="1" fill="#E9E9E9"/>
+        <rect x="0" y="106" width="287.098" height="1" fill="#E9E9E9"/>
+        <path d="M0 85C15 85 30 72 48 58C66 44 80 30 96 22C112 14 128 18 144 10C160 2 176 8 192 20C208 32 224 48 240 38C256 28 272 14 287.098 10V120H0Z" fill="url(#execGradient)"/>
+        <path d="M0 85C15 85 30 72 48 58C66 44 80 30 96 22C112 14 128 18 144 10C160 2 176 8 192 20C208 32 224 48 240 38C256 28 272 14 287.098 10" stroke="#01AEE5" stroke-width="2"/>
+        <defs>
+          <linearGradient id="execGradient" x1="143.549" y1="0.2315" x2="143.549" y2="120" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#9DE6FD"/>
+            <stop offset="1" stop-color="white" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!--
+DATA MAPPING:
+| Placeholder    | JSON Path                          |
+|----------------|------------------------------------|
+| Summary text   | enhanced.executiveSummaryEnhanced   |
+-->

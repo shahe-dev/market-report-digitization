@@ -1,0 +1,72 @@
+<!-- TEMPLATE: completionStatusDual -->
+<section class="stacked-bar-section" aria-labelledby="completion-status-dual-title">
+  <h2 id="completion-status-dual-title" class="stacked-bar-section__title">{{stackedBarDualGraph.titleBlack}}: <span class="highlight">{{stackedBarDualGraph.titleBlue}}</span></h2>
+  <p class="chart-summary" style="margin-top: 0;">{{enhanced.chartSummaries.completionStatusDual}}</p>
+
+  <div class="stacked-bar-dual">
+    <!-- Bar 1 -->
+    <figure>
+      <div class="stacked-bar-card" role="img" aria-describedby="sbd-bar1-desc">
+        <h3 class="stacked-bar-card__title">{{stackedBarDualGraph.bar1.cardTitle}}</h3>
+        <div class="stacked-bar">
+          <div class="stacked-bar__segment stacked-bar__segment--primary" style="flex-basis: {{stackedBarDualGraph.bar1.segment1.value}}%;">
+            <span class="stacked-bar__value">{{stackedBarDualGraph.bar1.segment1.displayValue}}</span>
+          </div>
+          <div class="stacked-bar__segment stacked-bar__segment--secondary" style="flex-basis: {{stackedBarDualGraph.bar1.segment2.value}}%;">
+            <span class="stacked-bar__value">{{stackedBarDualGraph.bar1.segment2.displayValue}}</span>
+          </div>
+        </div>
+        <div class="stacked-bar__legend">
+          <div class="stacked-bar__legend-item">
+            <span class="stacked-bar__legend-badge stacked-bar__legend-badge--primary"></span>
+            <span class="stacked-bar__legend-label">{{stackedBarDualGraph.bar1.segment1.label}}</span>
+            <span class="stacked-bar__legend-value">{{stackedBarDualGraph.bar1.segment1.displayValue}}</span>
+          </div>
+          <div class="stacked-bar__legend-item">
+            <span class="stacked-bar__legend-badge stacked-bar__legend-badge--secondary"></span>
+            <span class="stacked-bar__legend-label">{{stackedBarDualGraph.bar1.segment2.label}}</span>
+            <span class="stacked-bar__legend-value">{{stackedBarDualGraph.bar1.segment2.displayValue}}</span>
+          </div>
+        </div>
+      </div>
+      <figcaption id="sbd-bar1-desc" class="sr-only">{{stackedBarDualGraph.figcaption}}</figcaption>
+    </figure>
+
+    <!-- Bar 2 -->
+    <figure>
+      <div class="stacked-bar-card" role="img" aria-describedby="sbd-bar2-desc">
+        <h3 class="stacked-bar-card__title">{{stackedBarDualGraph.bar2.cardTitle}}</h3>
+        <div class="stacked-bar">
+          <div class="stacked-bar__segment stacked-bar__segment--primary" style="flex-basis: {{stackedBarDualGraph.bar2.segment1.value}}%;">
+            <span class="stacked-bar__value">{{stackedBarDualGraph.bar2.segment1.displayValue}}</span>
+          </div>
+          <div class="stacked-bar__segment stacked-bar__segment--secondary" style="flex-basis: {{stackedBarDualGraph.bar2.segment2.value}}%;">
+            <span class="stacked-bar__value">{{stackedBarDualGraph.bar2.segment2.displayValue}}</span>
+          </div>
+        </div>
+        <div class="stacked-bar__legend">
+          <div class="stacked-bar__legend-item">
+            <span class="stacked-bar__legend-badge stacked-bar__legend-badge--primary"></span>
+            <span class="stacked-bar__legend-label">{{stackedBarDualGraph.bar2.segment1.label}}</span>
+            <span class="stacked-bar__legend-value">{{stackedBarDualGraph.bar2.segment1.displayValue}}</span>
+          </div>
+          <div class="stacked-bar__legend-item">
+            <span class="stacked-bar__legend-badge stacked-bar__legend-badge--secondary"></span>
+            <span class="stacked-bar__legend-label">{{stackedBarDualGraph.bar2.segment2.label}}</span>
+            <span class="stacked-bar__legend-value">{{stackedBarDualGraph.bar2.segment2.displayValue}}</span>
+          </div>
+        </div>
+      </div>
+      <figcaption id="sbd-bar2-desc" class="sr-only">{{stackedBarDualGraph.figcaption}}</figcaption>
+    </figure>
+  </div>
+
+  <!-- SEO: Crawlable data table -->
+  <table class="sr-only">
+    <caption>{{stackedBarDualGraph.dataTable.caption}}</caption>
+    <thead><tr>{{FOR h IN stackedBarDualGraph.dataTable.headers}}<th scope="col">{{h}}</th>{{END}}</tr></thead>
+    <tbody>{{FOR row IN stackedBarDualGraph.dataTable.rows}}<tr>{{FOR cell IN row}}<td>{{cell}}</td>{{END}}</tr>{{END}}</tbody>
+  </table>
+
+  <p class="data-source">Source: {{stackedBarDualGraph.dataSource}}</p>
+</section>

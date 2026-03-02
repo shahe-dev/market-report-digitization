@@ -1,0 +1,36 @@
+<!-- TEMPLATE: completionStatus (extreme ratio override) -->
+<!--
+  Used when completionStatus appears in sectionOrder (instead of completionStatusDual).
+  This means the off-plan/ready split is >= 90% and a stacked bar would be visually meaningless.
+  When the ratio is not exactly 100%/0% but still >= 90%, adjust the values from
+  dataEvaluation.binaryRatio.values.
+-->
+<section aria-labelledby="completion-status-title" class="indicators-block">
+  <h2 id="completion-status-title" class="indicators-block__title">Completion Status: <span class="highlight">Transactions vs Value</span></h2>
+  <p class="chart-summary" style="margin-top: 0;">{{enhanced.chartSummaries.completionStatusDual OR GENERATE from dataEvaluation}}</p>
+
+  <div class="indicators">
+    <div class="indicator-card indicator-card--primary">
+      <div class="indicator-card__content">
+        <span class="indicator-card__label">Transactions by Completion Status</span>
+        <span class="indicator-card__value">{{dataEvaluation.binaryRatio.transactions.dominant}}% {{dataEvaluation.binaryRatio.transactions.dominantLabel}}</span>
+      </div>
+    </div>
+    <div class="indicator-card indicator-card--primary">
+      <div class="indicator-card__content">
+        <span class="indicator-card__label">AED Value by Completion Status</span>
+        <span class="indicator-card__value">{{dataEvaluation.binaryRatio.value.dominant}}% {{dataEvaluation.binaryRatio.value.dominantLabel}}</span>
+      </div>
+    </div>
+  </div>
+
+  <table class="sr-only">
+    <caption>Completion Status - Transactions vs Value</caption>
+    <thead><tr><th scope="col">Metric</th><th scope="col">Ready</th><th scope="col">Off-plan</th></tr></thead>
+    <tbody>
+      <tr><td>Transactions</td><td>{{dataEvaluation.binaryRatio.transactions.ready}}%</td><td>{{dataEvaluation.binaryRatio.transactions.offPlan}}%</td></tr>
+      <tr><td>AED Value</td><td>{{dataEvaluation.binaryRatio.value.ready}}%</td><td>{{dataEvaluation.binaryRatio.value.offPlan}}%</td></tr>
+    </tbody>
+  </table>
+  <p class="data-source">Source: {{metadata.dataSource}}</p>
+</section>

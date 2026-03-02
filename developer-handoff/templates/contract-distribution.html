@@ -1,0 +1,42 @@
+<!-- TEMPLATE: contractDistribution -->
+<section class="stacked-bar-section" aria-labelledby="contract-distribution-title">
+  <h2 id="contract-distribution-title" class="stacked-bar-section__title">Rental Contract <span class="highlight">Distribution</span></h2>
+  <p class="chart-summary" style="margin-top: 0;">{{enhanced.chartSummaries.contractDistribution}}</p>
+
+  <figure>
+    <div class="stacked-bar-card" role="img" aria-describedby="contract-distribution-desc">
+      <h3 class="stacked-bar-card__title">Contract Types - {{metadata.period}}</h3>
+      <div class="stacked-bar">
+        <div class="stacked-bar__segment stacked-bar__segment--primary" style="flex-basis: {{contactDistribution.newContracts}}%;">
+          <span class="stacked-bar__value">{{contactDistribution.newContracts}}%</span>
+        </div>
+        <div class="stacked-bar__segment stacked-bar__segment--secondary" style="flex-basis: {{contactDistribution.renewalContracts}}%;">
+          <span class="stacked-bar__value">{{contactDistribution.renewalContracts}}%</span>
+        </div>
+      </div>
+      <div class="stacked-bar__legend">
+        <div class="stacked-bar__legend-item">
+          <span class="stacked-bar__legend-badge stacked-bar__legend-badge--primary"></span>
+          <span class="stacked-bar__legend-label">New Contracts</span>
+          <span class="stacked-bar__legend-value">{{contactDistribution.newContracts}}%</span>
+        </div>
+        <div class="stacked-bar__legend-item">
+          <span class="stacked-bar__legend-badge stacked-bar__legend-badge--secondary"></span>
+          <span class="stacked-bar__legend-label">Renewals</span>
+          <span class="stacked-bar__legend-value">{{contactDistribution.renewalContracts}}%</span>
+        </div>
+      </div>
+    </div>
+    <figcaption id="contract-distribution-desc" class="sr-only">{{contactDistributionFigcaption}}</figcaption>
+  </figure>
+
+  <table class="sr-only">
+    <caption>{{metadata.community}} {{metadata.propertyType}} - Rental Contract Distribution {{metadata.period}}</caption>
+    <thead><tr><th scope="col">Contract Type</th><th scope="col">Percentage</th></tr></thead>
+    <tbody>
+      <tr><td>New Contracts</td><td>{{contactDistribution.newContracts}}%</td></tr>
+      <tr><td>Renewals</td><td>{{contactDistribution.renewalContracts}}%</td></tr>
+    </tbody>
+  </table>
+  <p class="data-source">Source: {{contactDistributionDataSource}}</p>
+</section>

@@ -1,0 +1,16 @@
+<!-- TEMPLATE: supplyDemandSnippet / priceDriversSnippet / investmentContextSnippet -->
+<!--
+  Same template, different data. Data mapping:
+
+  | sectionOrder value        | snippetId                  | JSON title path                                          | JSON content path                                          |
+  |---------------------------|----------------------------|----------------------------------------------------------|------------------------------------------------------------|
+  | supplyDemandSnippet       | "supply-demand-title"      | enhanced.marketDynamicsSnippets.supplyDemand.title       | enhanced.marketDynamicsSnippets.supplyDemand.content       |
+  | priceDriversSnippet       | "price-drivers-title"      | enhanced.marketDynamicsSnippets.priceDrivers.title       | enhanced.marketDynamicsSnippets.priceDrivers.content       |
+  | investmentContextSnippet  | "investment-context-title" | enhanced.marketDynamicsSnippets.investmentContext.title   | enhanced.marketDynamicsSnippets.investmentContext.content   |
+
+  NOTE: The "&" in "Supply & Demand" must be escaped to "&amp;" in HTML output.
+-->
+<div class="market-dynamics-snippet" aria-labelledby="{{snippetId}}">
+  <h3 id="{{snippetId}}" class="market-dynamics-snippet__title">{{title}}</h3>
+  <p class="market-dynamics-snippet__content">{{content}}</p>
+</div>

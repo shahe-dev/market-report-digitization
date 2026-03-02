@@ -1,0 +1,718 @@
+{
+  "generated_at": "2026-01-21T12:55:31.386987",
+  "data_filter": "reg_type_en != Unknown",
+  "core_metrics": {
+    "total_transactions": 199946,
+    "total_value": 538138179255.0,
+    "avg_price": 2691417.5790213356,
+    "median_price": 1529000.0,
+    "min_price": 100000.0,
+    "max_price": 550000000.0,
+    "yoy": {
+      "tx_2024": 168103,
+      "tx_2025": 199946,
+      "tx_growth": 18.942553077577436,
+      "val_2024": 424118086029.0,
+      "val_2025": 538138179255.0,
+      "val_growth": 26.884044086298086,
+      "avg_2024": 2522965.5986448782,
+      "avg_2025": 2691417.5790213356,
+      "price_growth": 6.676745036354652
+    }
+  },
+  "market_segments": [
+    {
+      "type": "Off-Plan",
+      "transactions": 139077,
+      "total_value": 363250698552.0,
+      "avg_price": 2611867.5162104447,
+      "percentage": 69.6
+    },
+    {
+      "type": "Existing",
+      "transactions": 60869,
+      "total_value": 174887480703.0,
+      "avg_price": 2873178.148203519,
+      "percentage": 30.4
+    }
+  ],
+  "property_types": [
+    {
+      "type": "Unit",
+      "transactions": 165466,
+      "total_value": 320568414133.0,
+      "avg_price": 1937367.2786735643,
+      "percentage": 82.8
+    },
+    {
+      "type": "Villa",
+      "transactions": 34480,
+      "total_value": 217569765122.0,
+      "avg_price": 6310027.9907772625,
+      "percentage": 17.2
+    }
+  ],
+  "price_segments": [
+    {
+      "segment": "Under 1M",
+      "transactions": 52301,
+      "total_value": 36913716442.0,
+      "avg_price": 705793.7026443089,
+      "percentage": 26.16
+    },
+    {
+      "segment": "1M-2M",
+      "transactions": 69605,
+      "total_value": 96940590761.0,
+      "avg_price": 1392724.5278500107,
+      "percentage": 34.81
+    },
+    {
+      "segment": "2M-5M",
+      "transactions": 59685,
+      "total_value": 180022255362.0,
+      "avg_price": 3016206.0042221663,
+      "percentage": 29.85
+    },
+    {
+      "segment": "5M-10M",
+      "transactions": 11704,
+      "total_value": 79464652105.0,
+      "avg_price": 6789529.400632262,
+      "percentage": 5.85
+    },
+    {
+      "segment": "10M-20M",
+      "transactions": 4162,
+      "total_value": 58429612083.0,
+      "avg_price": 14038830.389956752,
+      "percentage": 2.08
+    },
+    {
+      "segment": "20M+",
+      "transactions": 2489,
+      "total_value": 86367352502.0,
+      "avg_price": 34699619.32583367,
+      "percentage": 1.24
+    }
+  ],
+  "top_areas": [
+    {
+      "area": "Jumeirah Village Circle",
+      "transactions": 17931,
+      "total_value": 19777117574.0,
+      "avg_price": 1102956.7550052982,
+      "avg_psm": 15643.284863780042,
+      "market_share": 8.97
+    },
+    {
+      "area": "Business Bay",
+      "transactions": 11871,
+      "total_value": 27754864018.0,
+      "avg_price": 2338039.2568444107,
+      "avg_psm": 26543.58869919575,
+      "market_share": 5.94
+    },
+    {
+      "area": "Dubai South",
+      "transactions": 9819,
+      "total_value": 20464727391.0,
+      "avg_price": 2084196.6993583867,
+      "avg_psm": 17029.368428370504,
+      "market_share": 4.91
+    },
+    {
+      "area": "Dubai Residence Complex",
+      "transactions": 7802,
+      "total_value": 6764663558.0,
+      "avg_price": 867042.2401948218,
+      "avg_psm": 14266.363327988316,
+      "market_share": 3.9
+    },
+    {
+      "area": "Motor City",
+      "transactions": 5828,
+      "total_value": 7679927731.0,
+      "avg_price": 1317763.852264928,
+      "avg_psm": 18581.764524100705,
+      "market_share": 2.91
+    },
+    {
+      "area": "Dubai Science Park (DuBiotech)",
+      "transactions": 5391,
+      "total_value": 6785792816.0,
+      "avg_price": 1258726.1762196254,
+      "avg_psm": 18486.925932089445,
+      "market_share": 2.7
+    },
+    {
+      "area": "Dubai Production City",
+      "transactions": 5273,
+      "total_value": 4323280242.0,
+      "avg_price": 819890.0515835388,
+      "avg_psm": 14772.194649012243,
+      "market_share": 2.64
+    },
+    {
+      "area": "Jumeirah Village Triangle",
+      "transactions": 5135,
+      "total_value": 6177490766.0,
+      "avg_price": 1203016.7022395327,
+      "avg_psm": 16789.039601205022,
+      "market_share": 2.57
+    },
+    {
+      "area": "DAMAC Islands",
+      "transactions": 4845,
+      "total_value": 15407686850.0,
+      "avg_price": 3180121.124871001,
+      "avg_psm": 12168.951318445786,
+      "market_share": 2.42
+    },
+    {
+      "area": "DAMAC Riverside",
+      "transactions": 4559,
+      "total_value": 6469370764.0,
+      "avg_price": 1419032.8501864444,
+      "avg_psm": 15722.548087950148,
+      "market_share": 2.28
+    },
+    {
+      "area": "Dubai Maritime City",
+      "transactions": 4508,
+      "total_value": 13128761922.0,
+      "avg_price": 2912325.1823425023,
+      "avg_psm": 32098.16664395447,
+      "market_share": 2.25
+    },
+    {
+      "area": "Dubai Marina",
+      "transactions": 4506,
+      "total_value": 11389871041.0,
+      "avg_price": 2527712.1706613405,
+      "avg_psm": 25615.683294358023,
+      "market_share": 2.25
+    },
+    {
+      "area": "Dubai Islands",
+      "transactions": 4349,
+      "total_value": 14338443046.0,
+      "avg_price": 3296951.7236146242,
+      "avg_psm": 26278.254071294195,
+      "market_share": 2.18
+    },
+    {
+      "area": "Majan",
+      "transactions": 4324,
+      "total_value": 4170615358.0,
+      "avg_price": 964527.1410730805,
+      "avg_psm": 15893.328745386392,
+      "market_share": 2.16
+    },
+    {
+      "area": "Dubai Hills Estate",
+      "transactions": 4272,
+      "total_value": 16442997467.0,
+      "avg_price": 3849016.261001873,
+      "avg_psm": 26175.815227683142,
+      "market_share": 2.14
+    },
+    {
+      "area": "Dubai Silicon Oasis",
+      "transactions": 4049,
+      "total_value": 4127148830.0,
+      "avg_price": 1019300.7730303779,
+      "avg_psm": 15414.935417682544,
+      "market_share": 2.03
+    },
+    {
+      "area": "Dubai Creek Harbour",
+      "transactions": 3808,
+      "total_value": 10396571860.0,
+      "avg_price": 2730192.1901260503,
+      "avg_psm": 26078.91144390399,
+      "market_share": 1.9
+    },
+    {
+      "area": "Arjan",
+      "transactions": 3722,
+      "total_value": 3754219669.0,
+      "avg_price": 1008656.5472864051,
+      "avg_psm": 15287.250419357813,
+      "market_share": 1.86
+    },
+    {
+      "area": "Sobha Hartland II",
+      "transactions": 3666,
+      "total_value": 10278871965.0,
+      "avg_price": 2803838.506546645,
+      "avg_psm": 26625.01839847908,
+      "market_share": 1.83
+    },
+    {
+      "area": "Dubai Sports City",
+      "transactions": 3589,
+      "total_value": 4246355271.0,
+      "avg_price": 1183158.3368626358,
+      "avg_psm": 13736.880606834186,
+      "market_share": 1.79
+    }
+  ],
+  "top_developers": [
+    {
+      "developer": "Emaar",
+      "transactions": 25038,
+      "total_value": 114385469019.0,
+      "avg_price": 4568474.679247544,
+      "market_share": 12.52
+    },
+    {
+      "developer": "DAMAC Properties",
+      "transactions": 21336,
+      "total_value": 49045771452.0,
+      "avg_price": 2298733.1951631047,
+      "market_share": 10.67
+    },
+    {
+      "developer": "Binghatti",
+      "transactions": 18348,
+      "total_value": 26783995065.0,
+      "avg_price": 1459777.363472858,
+      "market_share": 9.18
+    },
+    {
+      "developer": "Sobha Group",
+      "transactions": 11016,
+      "total_value": 26481549664.0,
+      "avg_price": 2403916.9992737835,
+      "market_share": 5.51
+    },
+    {
+      "developer": "Nakheel",
+      "transactions": 5967,
+      "total_value": 37830689569.0,
+      "avg_price": 6339984.844813139,
+      "market_share": 2.98
+    },
+    {
+      "developer": "Danube Properties",
+      "transactions": 5264,
+      "total_value": 7970982888.0,
+      "avg_price": 1514244.4696048633,
+      "market_share": 2.63
+    },
+    {
+      "developer": "Azizi",
+      "transactions": 5099,
+      "total_value": 4511782926.0,
+      "avg_price": 884836.8162384782,
+      "market_share": 2.55
+    },
+    {
+      "developer": "Samana Developers",
+      "transactions": 4603,
+      "total_value": 4788321336.0,
+      "avg_price": 1040260.9897892679,
+      "market_share": 2.3
+    },
+    {
+      "developer": "Meraas",
+      "transactions": 3919,
+      "total_value": 32808508578.0,
+      "avg_price": 8371653.12018372,
+      "market_share": 1.96
+    },
+    {
+      "developer": "Dubai Properties",
+      "transactions": 3787,
+      "total_value": 11221918005.0,
+      "avg_price": 2963273.832849221,
+      "market_share": 1.89
+    },
+    {
+      "developer": "Ellington Properties",
+      "transactions": 3208,
+      "total_value": 8089823426.0,
+      "avg_price": 2521765.407107232,
+      "market_share": 1.6
+    },
+    {
+      "developer": "Imtiaz Developments",
+      "transactions": 2856,
+      "total_value": 4215833268.0,
+      "avg_price": 1476132.0966386555,
+      "market_share": 1.43
+    },
+    {
+      "developer": "Tiger Properties",
+      "transactions": 2828,
+      "total_value": 2872157603.0,
+      "avg_price": 1015614.4282178218,
+      "market_share": 1.41
+    },
+    {
+      "developer": "Nshama",
+      "transactions": 2777,
+      "total_value": 4929030070.0,
+      "avg_price": 1774947.8105869642,
+      "market_share": 1.39
+    },
+    {
+      "developer": "Aldar Properties",
+      "transactions": 2457,
+      "total_value": 10501874741.0,
+      "avg_price": 4274267.293854293,
+      "market_share": 1.23
+    }
+  ],
+  "monthly": [
+    {
+      "month": 1,
+      "transactions": 13010,
+      "total_value": 35310580744.0,
+      "avg_price": 2714110.7412759415
+    },
+    {
+      "month": 2,
+      "transactions": 14988,
+      "total_value": 41274013700.0,
+      "avg_price": 2753803.956498532
+    },
+    {
+      "month": 3,
+      "transactions": 14205,
+      "total_value": 37434240602.0,
+      "avg_price": 2635286.209222105
+    },
+    {
+      "month": 4,
+      "transactions": 16445,
+      "total_value": 48421229664.0,
+      "avg_price": 2944434.7621769533
+    },
+    {
+      "month": 5,
+      "transactions": 17522,
+      "total_value": 54682127432.0,
+      "avg_price": 3120769.7427234333
+    },
+    {
+      "month": 6,
+      "transactions": 15471,
+      "total_value": 43743134129.0,
+      "avg_price": 2827427.7117833365
+    },
+    {
+      "month": 7,
+      "transactions": 18760,
+      "total_value": 50806029371.0,
+      "avg_price": 2708210.5208422174
+    },
+    {
+      "month": 8,
+      "transactions": 17600,
+      "total_value": 41664938710.0,
+      "avg_price": 2367326.0630681817
+    },
+    {
+      "month": 9,
+      "transactions": 18639,
+      "total_value": 44417980360.0,
+      "avg_price": 2383066.7074413863
+    },
+    {
+      "month": 10,
+      "transactions": 18286,
+      "total_value": 46411788310.0,
+      "avg_price": 2538105.015312261
+    },
+    {
+      "month": 11,
+      "transactions": 17791,
+      "total_value": 47658479683.0,
+      "avg_price": 2678797.1268056883
+    },
+    {
+      "month": 12,
+      "transactions": 17229,
+      "total_value": 46313636550.0,
+      "avg_price": 2688120.9907713737
+    }
+  ],
+  "record_transactions": [
+    {
+      "id": "12196533",
+      "date": "2025-12-12",
+      "area": "Business Bay",
+      "project": "Bugatti Residences by Binghatti",
+      "developer": "Binghatti",
+      "type": "Unit",
+      "beds": "6 B/R",
+      "price": 550000000.0,
+      "psm": 125424.73375749697,
+      "sale_type": "Off-Plan"
+    },
+    {
+      "id": "8828476",
+      "date": "2025-01-28",
+      "area": "Emirates Hills",
+      "project": "Sector E",
+      "developer": "Emaar",
+      "type": "Villa",
+      "beds": "",
+      "price": 425000000.0,
+      "psm": null,
+      "sale_type": "Off-Plan"
+    },
+    {
+      "id": "9053212",
+      "date": "2025-08-05",
+      "area": "La Mer",
+      "project": "Jumeirah Asora Bay Ocean Mansions",
+      "developer": "Meraas",
+      "type": "Villa",
+      "beds": "7 B/R",
+      "price": 350000000.0,
+      "psm": 139774.1250139774,
+      "sale_type": "Off-Plan"
+    },
+    {
+      "id": "8889751",
+      "date": "2025-03-04",
+      "area": "Jumeirah Bay Island",
+      "project": "",
+      "developer": "Meraas",
+      "type": "Villa",
+      "beds": "",
+      "price": 330000000.0,
+      "psm": null,
+      "sale_type": "Existing"
+    },
+    {
+      "id": "8966892",
+      "date": "2025-05-07",
+      "area": "Palm Jumeirah",
+      "project": "The Crescent",
+      "developer": "Blue Haven Real Estate Development LLC",
+      "type": "Villa",
+      "beds": "6 B/R",
+      "price": 300000000.0,
+      "psm": 199501.24688279303,
+      "sale_type": "Off-Plan"
+    },
+    {
+      "id": "9054619",
+      "date": "2025-08-06",
+      "area": "Emirates Hills",
+      "project": "Sector E",
+      "developer": "Emaar",
+      "type": "Villa",
+      "beds": "",
+      "price": 260000000.0,
+      "psm": null,
+      "sale_type": "Existing"
+    },
+    {
+      "id": "9029901",
+      "date": "2025-07-11",
+      "area": "Jumeirah",
+      "project": "Jumeirah 2",
+      "developer": "Rosewood",
+      "type": "Villa",
+      "beds": "5 B/R",
+      "price": 250000000.0,
+      "psm": 105331.4570289788,
+      "sale_type": "Off-Plan"
+    },
+    {
+      "id": "12225703",
+      "date": "2025-12-18",
+      "area": "Emirates Hills",
+      "project": "Sector V",
+      "developer": "Emaar",
+      "type": "Villa",
+      "beds": "",
+      "price": 233500000.0,
+      "psm": null,
+      "sale_type": "Existing"
+    },
+    {
+      "id": "11906754",
+      "date": "2025-11-03",
+      "area": "Al Sufouh",
+      "project": "Al Sufouh 1",
+      "developer": "",
+      "type": "Villa",
+      "beds": "",
+      "price": 230000000.0,
+      "psm": null,
+      "sale_type": "Off-Plan"
+    },
+    {
+      "id": "8949173",
+      "date": "2025-04-24",
+      "area": "Jumeirah Bay Island",
+      "project": "",
+      "developer": "",
+      "type": "Villa",
+      "beds": "",
+      "price": 225000000.0,
+      "psm": null,
+      "sale_type": "Existing"
+    }
+  ],
+  "luxury_20m_areas": [
+    {
+      "area": "Palm Jebel Ali",
+      "transactions": 517,
+      "total_value": 12369593712.0,
+      "avg_price": 23925713.176015474
+    },
+    {
+      "area": "The Oasis",
+      "transactions": 307,
+      "total_value": 7359955532.0,
+      "avg_price": 23973796.52117264
+    },
+    {
+      "area": "Palm Jumeirah",
+      "transactions": 273,
+      "total_value": 11996563014.0,
+      "avg_price": 43943454.26373626
+    },
+    {
+      "area": "Dubai Hills Estate",
+      "transactions": 116,
+      "total_value": 3970840603.0,
+      "avg_price": 34231384.50862069
+    },
+    {
+      "area": "Mohammed Bin Rashid City",
+      "transactions": 116,
+      "total_value": 3570237026.0,
+      "avg_price": 30777905.396551725
+    },
+    {
+      "area": "Jumeirah",
+      "transactions": 116,
+      "total_value": 5603818383.0,
+      "avg_price": 48308779.1637931
+    },
+    {
+      "area": "Downtown Dubai",
+      "transactions": 107,
+      "total_value": 3140806351.0,
+      "avg_price": 29353330.38317757
+    },
+    {
+      "area": "La Mer",
+      "transactions": 93,
+      "total_value": 4865189680.0,
+      "avg_price": 52313867.52688172
+    },
+    {
+      "area": "Jumeirah Islands",
+      "transactions": 69,
+      "total_value": 1845105964.0,
+      "avg_price": 26740666.144927535
+    },
+    {
+      "area": "Business Bay",
+      "transactions": 66,
+      "total_value": 2718487624.0,
+      "avg_price": 41189206.42424242
+    },
+    {
+      "area": "Sobha Hartland II",
+      "transactions": 63,
+      "total_value": 1928250321.0,
+      "avg_price": 30607147.95238095
+    },
+    {
+      "area": "Jumeirah Golf Estates",
+      "transactions": 58,
+      "total_value": 1647339388.0,
+      "avg_price": 28402403.24137931
+    },
+    {
+      "area": "Al Barari",
+      "transactions": 58,
+      "total_value": 2174539888.0,
+      "avg_price": 37492067.03448276
+    },
+    {
+      "area": "Tilal Al Ghaf",
+      "transactions": 54,
+      "total_value": 2100710160.0,
+      "avg_price": 38902040.0
+    },
+    {
+      "area": "Nad Al Sheba",
+      "transactions": 50,
+      "total_value": 1205163000.0,
+      "avg_price": 24103260.0
+    }
+  ],
+  "luxury_20m_developers": [
+    {
+      "developer": "Nakheel",
+      "transactions": 726,
+      "total_value": 20084018719.0,
+      "avg_price": 27663937.629476584
+    },
+    {
+      "developer": "Emaar",
+      "transactions": 531,
+      "total_value": 16272617467.0,
+      "avg_price": 30645230.6346516
+    },
+    {
+      "developer": "Meraas",
+      "transactions": 198,
+      "total_value": 8751722950.0,
+      "avg_price": 44200620.959595956
+    },
+    {
+      "developer": "H&H Development",
+      "transactions": 165,
+      "total_value": 6033691885.0,
+      "avg_price": 36567829.60606061
+    },
+    {
+      "developer": "Sobha Group",
+      "transactions": 84,
+      "total_value": 2491815150.0,
+      "avg_price": 29664466.07142857
+    },
+    {
+      "developer": "Meydan Group",
+      "transactions": 74,
+      "total_value": 2381959878.0,
+      "avg_price": 32188647.0
+    },
+    {
+      "developer": "Omniyat",
+      "transactions": 72,
+      "total_value": 3079285053.0,
+      "avg_price": 42767847.958333336
+    },
+    {
+      "developer": "Al Barari Development Company LLC",
+      "transactions": 57,
+      "total_value": 2099039888.0,
+      "avg_price": 36825261.19298246
+    },
+    {
+      "developer": "Majid Al Futtaim (MAF)",
+      "transactions": 54,
+      "total_value": 2100710160.0,
+      "avg_price": 38902040.0
+    },
+    {
+      "developer": "DAMAC Properties",
+      "transactions": 39,
+      "total_value": 957684820.0,
+      "avg_price": 24556021.025641024
+    }
+  ]
+}

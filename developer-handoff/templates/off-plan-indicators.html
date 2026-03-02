@@ -1,0 +1,34 @@
+<!-- TEMPLATE: offPlanPrimary (indicators-block variant) -->
+<!--
+  Used when enhanced.componentSelections.offPlanPrimary == "indicators-block"
+  Same data source as comparison-cards variant, different visual treatment.
+-->
+<section aria-labelledby="off-plan-section" class="indicators-block">
+  <h2 id="off-plan-section" class="indicators-block__title">Off-Plan Primary Market - <span class="highlight">{{metadata.community}}</span></h2>
+  <p class="chart-summary" style="margin-top: 0;">{{enhanced.chartSummaries.offPlanPrimary}}</p>
+
+  <div class="indicators">
+    <!-- Primary: Total Value -->
+    <div class="indicator-card indicator-card--primary">
+      <div class="indicator-card__content">
+        <span class="indicator-card__label">Off-Plan Primary Value</span>
+        <span class="indicator-card__value">{{offPlanPrimary.totalValue}}</span>
+      </div>
+      {{IF offPlanPrimary.valueGrowth}}
+      <span class="indicator-card__label" style="opacity: 0.85;">{{FORMAT_SIGN(offPlanPrimary.valueGrowth)}}% YoY</span>
+      {{END IF}}
+    </div>
+
+    <!-- Secondary: Transactions -->
+    <div class="indicator-card indicator-card--secondary">
+      <div class="indicator-card__content">
+        <span class="indicator-card__value indicator-card__value--cyan">{{offPlanPrimary.transactions}}</span>
+        <span class="indicator-card__label">Off-Plan Primary Transactions</span>
+      </div>
+      {{IF offPlanPrimary.transactionGrowth}}
+      <span style="font-size: 14px; font-weight: 700; color: var(--color-{{SIGN(offPlanPrimary.transactionGrowth)}});">{{FORMAT_SIGN(offPlanPrimary.transactionGrowth)}}% YoY</span>
+      {{END IF}}
+    </div>
+  </div>
+  <p class="data-source">Source: {{offPlanPrimaryDataSource}}</p>
+</section>

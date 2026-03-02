@@ -1,0 +1,80 @@
+<!-- TEMPLATE: kpiStrip -->
+<section aria-labelledby="kpi-section" class="key-performance">
+  <h2 id="kpi-section" class="key-performance__title">Key Performance Indicators - <span class="highlight">{{metadata.period}}</span></h2>
+  <p class="chart-summary" style="margin-top: 0;">{{GENERATED_KPI_SUMMARY}}</p>
+
+  <div class="kpi-grid">
+    <!-- KPI 1: Price per Sq Ft -->
+    <div class="kpi-card">
+      <div class="kpi-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="#01AEE5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="kpi-card__value">{{keyPerformance.pricePerSqFt}}</div>
+      <div class="kpi-card__label">Average Price per Sq. Ft</div>
+      <div class="kpi-card__change kpi-card__change--{{SIGN(keyPerformance.priceGrowth)}}">{{FORMAT_SIGN(keyPerformance.priceGrowth)}}% YoY</div>
+    </div>
+
+    <!-- KPI 2: Transactions -->
+    <div class="kpi-card">
+      <div class="kpi-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M3 17l6-6 4 4 8-8" stroke="#01AEE5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M17 7h4v4" stroke="#01AEE5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="kpi-card__value">{{keyPerformance.resaleTransactions}}</div>
+      <div class="kpi-card__label">Resale Transactions</div>
+      {{IF transactionGrowth}}
+      <div class="kpi-card__change kpi-card__change--{{SIGN(transactionGrowth)}}">{{FORMAT_SIGN(transactionGrowth)}}% YoY</div>
+      {{END IF}}
+    </div>
+
+    <!-- KPI 3: Total Value -->
+    <div class="kpi-card">
+      <div class="kpi-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="10" width="4" height="10" stroke="#01AEE5" stroke-width="1.5"/>
+          <rect x="10" y="6" width="4" height="14" stroke="#01AEE5" stroke-width="1.5"/>
+          <rect x="17" y="2" width="4" height="18" stroke="#01AEE5" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="kpi-card__value">{{keyPerformance.totalResaleValue}}</div>
+      <div class="kpi-card__label">Total Resale Value</div>
+      {{IF valueGrowth}}
+      <div class="kpi-card__change kpi-card__change--{{SIGN(valueGrowth)}}">{{FORMAT_SIGN(valueGrowth)}}% YoY</div>
+      {{END IF}}
+    </div>
+
+    <!-- KPI 4: Gross Rental Yield -->
+    <div class="kpi-card">
+      <div class="kpi-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" stroke="#01AEE5" stroke-width="1.5"/>
+          <path d="M12 6v6l4 2" stroke="#01AEE5" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="kpi-card__value">{{grossRentYield}}%</div>
+      <div class="kpi-card__label">Gross Rental Yield</div>
+    </div>
+  </div>
+</section>
+
+<!--
+DATA MAPPING:
+| Placeholder          | JSON Path                          |
+|----------------------|------------------------------------|
+| Price per sqft       | keyPerformance.pricePerSqFt        |
+| Price growth         | keyPerformance.priceGrowth         |
+| Transactions         | keyPerformance.resaleTransactions  |
+| Transaction growth   | transactionGrowth                  |
+| Total value          | keyPerformance.totalResaleValue    |
+| Value growth         | valueGrowth                        |
+| Yield                | grossRentYield                     |
+| KPI summary text     | enhanced.chartSummaries.kpiStrip   |
+
+HELPER FUNCTIONS:
+- SIGN(value): returns "positive" | "negative" | "neutral"
+- FORMAT_SIGN(value): returns "+14.9" | "-0.3" | "0"
+-->
